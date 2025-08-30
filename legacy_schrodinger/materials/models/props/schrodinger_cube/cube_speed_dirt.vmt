@@ -1,0 +1,12 @@
+VertexLitGeneric {
+	$basetexture						"models/props/schrodinger_cube/cube_albedo_dirt"
+	$surfaceprop						"metal"
+	$tintmasktexture					"models/props/schrodinger_cube/tint_mask"
+	$detail "paint/prop_paint_orange"
+	$detailscale 1
+	$detailblendmode 2
+	$bumpmap "paint/prop_paint_normal"
+	$envmap "paint/paint_envmap_hdr"
+	$envmaptint "[0.05 0.05 0.05]"
+	$normalmapalphaenvmapmask 1
+}

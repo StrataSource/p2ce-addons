@@ -1,0 +1,6 @@
+VertexLitGeneric {
+	$basetexture						"models/props/schrodinger_cube/card_fin_albedo"
+	$surfaceprop						"metal"
+
+	$alphatest 1
+}
