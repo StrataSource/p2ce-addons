@@ -1,0 +1,27 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	mod = "Personality Sphere visual updates (★)"
+	description = "General visual improvements for personality spheres. Includes updated models for personality spheres and WheatDOS shields; improved materials for personality spheres, PotatOS viewmodel and bombs with corrected phong and new bumpmaps.\n\nThis is an inbox addon and comes bundled as part of your Portal 2: Community Edition install.\n\nVersion 1.00"
+	type = "Asset Pack"
+	id = 0
+	thumbnail = ".assets/psphere_temp_thumb.png"
+	authors =
+	[ 
+		"P2:CE Team Members",
+		"pivotman319",
+		"Rip Rip Rip"
+	]
+	dependencies = [  ]
+	tags = 
+	[
+		"Materials/Textures",
+		"Models",
+	]
+	ignore = [  ]
+	metadata = 
+	{
+	}
+	assets = 
+	{
+	}
+}
