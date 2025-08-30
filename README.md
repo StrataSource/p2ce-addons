@@ -1,2 +1,2 @@
-# p2ce-addons
-Local addons shipped with Portal 2: CE
+# P2:CE Addons
+Local addons shipped with Portal 2: Community Edition.
