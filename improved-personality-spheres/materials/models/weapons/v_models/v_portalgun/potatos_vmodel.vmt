@@ -1,0 +1,28 @@
+VertexLitGeneric
+{
+	$basetexture "models/weapons/v_models/v_portalgun/potatOS_vmodel"
+	$surfaceprop default
+	$selfillum 1
+	
+	$phong 1
+	$phongexponenttexture "models\weapons\v_models\v_portalgun\potatOS_vmodel_exponent"
+	$phongboost .25
+	$phongfresnelranges "[.5 .1 1]"
+	
+	"$basemapalphaphongmask" 1
+	"$basemapluminancephongmask" 1
+	
+	"$rimlightexponent" "0.2"
+	"$rimlightboost" 3
+	"$phongalbedotint" 1
+
+	$bumpmap "models\weapons\v_models\v_portalgun\potatOS_vmodel_normal"
+
+	Proxies
+	{
+		LightedMouth
+		{
+			resultVar $selfillumtint
+		}
+	}
+}
