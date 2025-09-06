@@ -180,3 +180,22 @@
 		"wave"			"npc/turret_floor/turret_tipped_6.wav"
 	}
 }
+
+// NEW FOR UNUSED TURRRT VO ADDON
+
+"NPC_FloorTurret.TalkBlockedByBridge"
+{
+	"channel"		"CHAN_VOICE"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_55dB"
+
+	"rndwave"
+	{
+		"wave"			"npc/turret/turretlightbridgeblock01.wav"
+		"wave"			"npc/turret/turretlightbridgeblock02.wav"
+		"wave"			"npc/turret/turretlightbridgeblock03.wav"
+		"wave"			"npc/turret/turretlightbridgeblock04.wav"
+	}
+}
