@@ -1,0 +1,28 @@
+name: Build Addons
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+
+      - name: Build Addons
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          python -m pip install -r _build/requirements.txt
+          cd _build
+          python -m build
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: _out/addons.zip
+          generate_release_notes: true
+          make-latest: true

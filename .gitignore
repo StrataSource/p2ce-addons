@@ -1,2 +1,12 @@
+# IDE
+.vs/
+.idea/
+.vscode/
+
+# Artifacts
+.venv/
+_out
+addons.zip
+
+# Game
 addonlist.kv3
-/.vs
