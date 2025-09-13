@@ -1,0 +1,5 @@
+VertexLitGeneric
+{
+$baseTexture "models/props_ingame/paint_dropper_new_grey"
+$selfillum 1
+}
