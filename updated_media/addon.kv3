@@ -1,7 +1,7 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
 	mod = "Updated Media (★)"
-	description = "Adds updated loading screens, updated menu backgrounds and an updated post-credits cutscene.\n\nA game restart may be required to enable/disable this addon.\n\nVersion 1.00."
+	description = "Adds updated loading screens, updated menu backgrounds and an updated post-credits cutscene.\n\nA game restart may be required to enable/disable this addon.\n\nVersion 1.0.0"
 	type = "Asset Pack"
 	id = 0
 	thumbnail = ".assets/thumb.jpg"
