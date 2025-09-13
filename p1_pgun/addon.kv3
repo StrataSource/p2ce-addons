@@ -1,0 +1,26 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	mod = "P1 Portal Gun (★)"
+	description = "Replaces the portal gun with the variant from Portal 1.\n\nIncludes sound replacements for prop pickup, +use, firing, and portals.\n\nVersion 1.00."
+	type = ""
+	id = 0
+	thumbnail = ".assets/thumb.jpg"
+	authors =
+	[ 
+		"P2:CE Team"
+	]
+	dependencies = [  ]
+	tags = 
+	[
+		"Materials/Textures",
+		"Models",
+		"Game Port",
+	]
+	ignore = [  ]
+	metadata = 
+	{
+	}
+	assets = 
+	{
+	}
+}
