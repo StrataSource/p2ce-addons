@@ -20,9 +20,15 @@ jobs:
           cd _build
           python -m build
 
+      - name: Create Release Tag
+        id: release_tag
+        run: |
+          echo "::set-output name=tag::release_$(date +"%Y_%m_%d_%H_%M_%S")"
+
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{steps.release_tag.outputs.tag}}
           files: _out/addons.zip
           generate_release_notes: true
-          make-latest: true
+          make_latest: true
