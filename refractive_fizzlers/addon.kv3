@@ -2,7 +2,7 @@
 {
 	mod = "Refractive Fizzlers (★)"
 	description = "Adds a refractive visual effect to all fizzler types.\n\nSome artifacts may occur.\nFor best results, launch P2:CE with the parameter '-powerOfTwoTextureSize 8192' to increase refraction resolution.\n\nVersion 1.0.0"
-	type = ""
+	type = "Asset Pack"
 	id = 0
 	thumbnail = ".assets/thumb.jpg"
 	authors =

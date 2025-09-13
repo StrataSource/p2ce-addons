@@ -2,7 +2,7 @@
 {
 	mod = "Unused Turret VO (★)"
 	description = "Reimplements the unused Turret VO found within Portal's files.\n\nAlso adds logic to restore lines designed to play if Turrets are blocked by a Hard Light Bridge.\n\nOverall, a total of 16 additional voicelines have the ability to play.\n\nVersion 1.1.0"
-	type = ""
+	type = "Asset Pack"
 	id = 0
 	thumbnail = ".assets/thumb.jpg"
 	authors =
