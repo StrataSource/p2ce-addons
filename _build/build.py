@@ -2,7 +2,16 @@ import os
 import shutil
 import sys
 
+from PIL import Image
 from sourcepp import vpkpp
+
+
+def add_overlay_to_image(base_path: str, overlay_path: str, out_path: str) -> None:
+    base = Image.open(base_path).convert("RGBA")
+    overlay = Image.open(overlay_path).convert("RGBA")
+    base = base.resize(overlay.size, Image.Resampling.BICUBIC)
+    base.paste(overlay, None, overlay)
+    base.convert("RGB").save(out_path)
 
 
 def build_addon(addon_dir: str, output_dir_parent: str) -> None:
@@ -33,6 +42,13 @@ def build_addon(addon_dir: str, output_dir_parent: str) -> None:
             elif os.path.isfile(entry):
                 vpk.add_entry_from_file(os.path.basename(entry), entry)
         vpk.bake()
+
+    if (
+        os.path.exists(thumb_path := os.path.join(output_dir, ".assets", "thumb.png")) or
+        os.path.exists(thumb_path := os.path.join(output_dir, ".assets", "thumb.jpg")) or
+        os.path.exists(thumb_path := os.path.join(output_dir, ".assets", "thumb.jpeg"))
+    ):
+        add_overlay_to_image(thumb_path, os.path.join(os.path.dirname(__file__), "assets", "thumb_overlay.png"), thumb_path)
 
 
 def zip_addons(parent_dir: str, stem: str) -> None:
