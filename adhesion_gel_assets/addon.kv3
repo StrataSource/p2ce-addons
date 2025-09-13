@@ -1,0 +1,25 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	mod = "Adhesion/Reflection Gel Assets (★)"
+	description = "Implements Adhesion/Reflection gel-related assets.\n\nChanges include:\n- Adhesion skins for cubes\n- Gel skins for Schrodinger cube\n- Adhesion/Reflection skins for info_paint_sprayer and prop_paint_bomb\n- Lightbridge gel textures\n- Adhesion/Reflection skins for both gel droppers\n- blob_curve_green and blob_curve_grey particles\n\nNOTE: As of right now, prop_weighted_cubes will not have their skin automatically update when painted with adhesion/reflection gel. This will be fixed in a future game update.\n\nVersion 1.0.0"
+	type = "Asset Pack"
+	id = 0
+	thumbnail = ".assets/thumb.jpg"
+	authors =
+	[
+		"lenship2"
+	]
+	dependencies = [  ]
+	tags = 
+	[
+		"Materials/Textures",
+		"Models",
+	]
+	ignore = [  ]
+	metadata = 
+	{
+	}
+	assets = 
+	{
+	}
+}
