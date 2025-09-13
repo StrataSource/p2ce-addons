@@ -4,7 +4,7 @@
 	description = "General visual improvements for personality spheres. Includes updated models for personality spheres and WheatDOS shields; improved materials for personality spheres, PotatOS viewmodel and bombs with corrected phong and new bumpmaps.\n\nThis is an inbox addon and comes bundled as part of your Portal 2: Community Edition install.\n\nVersion 1.00"
 	type = "Asset Pack"
 	id = 0
-	thumbnail = ".assets/psphere_temp_thumb.png"
+	thumbnail = ".assets/thumb.jpg"
 	authors =
 	[ 
 		"P2:CE Team Members",
