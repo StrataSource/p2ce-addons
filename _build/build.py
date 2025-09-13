@@ -37,7 +37,7 @@ def build_addon(addon_dir: str, output_dir_parent: str) -> None:
 
 def zip_addons(parent_dir: str, stem: str) -> None:
     print(f"Zipping contents of {parent_dir} into {stem}.zip")
-    shutil.make_archive(os.path.join(parent_dir, stem), "zip", parent_dir)
+    shutil.make_archive(os.path.join(parent_dir, os.path.pardir, stem), "zip", parent_dir)
 
 
 def build(addon_root_dir: str) -> None:

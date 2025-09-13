@@ -29,6 +29,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{steps.release_tag.outputs.tag}}
-          files: _out/addons.zip
+          files: addons.zip
           generate_release_notes: true
           make_latest: true
