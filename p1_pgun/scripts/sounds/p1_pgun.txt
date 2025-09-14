@@ -1,0 +1,491 @@
+// === edited portal/pgun sounds for p1_pgun addon
+
+// firing
+"Weapon_Portalgun.fire_blue"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"0.7"
+	"soundlevel"		"SNDLVL_GUNFIRE"
+	"pitch"			"95,105"
+	"wave"			"p1_pgun/portalgun_shoot_blue1.wav"
+
+	"soundentry_version" "2"
+
+	"operator_stacks"
+	{
+		"start_stack"
+		{
+			"import_stack" 	"P2_portalgun_start"
+
+			"stop_gun"
+			{
+				"match_entry" "Portalgun.fire"
+				"input_max_entries" "1.000000"
+			}
+		}
+	}
+}
+
+"Weapon_Portalgun.fire_blue_npc"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"0.7"
+	"soundlevel"		"SNDLVL_GUNFIRE"
+	"pitch"			"95,105"
+	"wave"			"^p1_pgun/portalgun_shoot_blue1.wav"
+
+	"soundentry_version" "2"
+
+	"operator_stacks"
+	{
+		"start_stack"
+		{
+			"import_stack" 	"P2_portalgun_start"
+
+			"stop_gun"
+			{
+				"match_entry" "Portalgun.fire"
+				"input_max_entries" "1.000000"
+			}
+		}
+	}
+}
+
+"Weapon_Portalgun.fire_red"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"0.7"
+	"soundlevel"		"SNDLVL_GUNFIRE"
+	"pitch"			"95,105"
+	"wave"			"p1_pgun/portalgun_shoot_red1.wav"
+
+	"soundentry_version" "2"
+
+	"operator_stacks"
+	{
+		"start_stack"
+		{
+			"import_stack" 	"P2_portalgun_start"
+
+			"stop_gun"
+			{
+				"match_entry" "Portalgun.fire"
+				"input_max_entries" "1.000000"
+			}
+		}
+	}
+}
+
+"Weapon_Portalgun.fire_red_npc"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"0.7"
+	"soundlevel"		"SNDLVL_GUNFIRE"
+	"pitch"			"95,105"
+	"wave"			"^p1_pgun/portalgun_shoot_red1.wav"
+
+	"soundentry_version" "2"
+
+	"operator_stacks"
+	{
+		"start_stack"
+		{
+			"import_stack" 	"P2_portalgun_start"
+
+			"stop_gun"
+			{
+				"match_entry" "Portalgun.fire"
+				"input_max_entries" "1.000000"
+			}
+		}
+	}
+}
+
+// pgun pickup
+"Weapon_Portalgun.powerup"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"0.7"
+	"soundlevel"		"SNDLVL_90db"
+	"wave"			"p1_pgun/portalgun_powerup1.wav"
+
+	"soundentry_version" "2"
+
+	"operator_stacks"
+	{
+		"start_stack"
+		{
+			"import_stack"	"P2_null_player_start"
+			
+			"play_entry"
+			{
+				"entry_name" "Portal.PortalgunActivate" //Replace with the sound you want to play.
+			}
+		}
+	}
+}
+
+"Portal.PortalgunActivate"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"0.9"
+	"soundlevel"		"SNDLVL_90db"
+	"wave"			"p1_pgun/portalgun_powerup1.wav"
+
+	"soundentry_version" "2"
+
+	"operator_stacks"
+	{
+		"start_stack"
+		{
+			"import_stack"	"P2_exclusion_time_blocker_start"
+			
+			"block_entries" 
+			{
+				"input_duration" "0.5"
+				"match_entry" "Portal.PortalgunActivate" //The sound entry to use
+				"match_entity" "true"
+			}
+		}
+	}
+}
+
+"Weapon_Portalgun.HoldSound"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"		"1.0"
+	"soundlevel"		"SNDLVL_50db"
+	"pitch"			"50"
+	"wave"			"p1_pgun/hold_loop.wav"
+}
+
+// portal sounds
+
+"Portal.open_red"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"0.6"
+	"soundlevel"		"SNDLVL_80db"
+	"pitch"			"95,105"
+	"rndwave"
+	{
+		"wave"			"weapons/portalgun/portal_open2.wav"
+		"wave"			"weapons/portalgun/portal_open3.wav"
+	}
+
+	"soundentry_version" "2"
+
+	"operator_stacks"
+	{
+		"start_stack"
+		{
+			"import_stack" 	"P2_exclusion_time_and_poly_limiting_start"
+
+			"limit_sound"
+			{
+				"match_entry" "Portal.open"
+				"input_max_entries" "1.000000"
+				"match_substring" "true"
+			}
+				
+			"block_entries"
+			{
+				
+				"match_entry" "Portal.open_red" //The sound entry to use
+				"input_duration" "0.1" //in seconds
+			}
+		}
+	}
+}
+
+"Portal.open_blue"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"0.6"
+	"soundlevel"		"SNDLVL_80db"
+	"pitch"			"95,105"
+    "wave"			"weapons/portalgun/portal_open1.wav"
+
+	"soundentry_version" "2"
+
+	"operator_stacks"
+	{
+		"start_stack"
+		{
+			"import_stack" 	"P2_exclusion_time_and_poly_limiting_start"
+
+			"limit_sound"
+			{
+				"match_entry" "Portal.open"
+				"input_max_entries" "1.000000"
+				"match_substring" "true"
+			}
+				
+			"block_entries"
+			{
+				
+				"match_entry" "Portal.open_red" //The sound entry to use
+				"input_duration" "0.1" //in seconds
+			}
+		}
+	}
+}
+
+"Portal.close_red"
+{
+	"channel"		"CHAN_BODY"
+	"volume"		"0.6"
+	"soundlevel"		"SNDLVL_80db"
+	"pitch"			"95,105"
+	"wave"			"p1_pgun/portal_close2.wav"
+
+}
+
+"Portal.close_blue"
+{
+	"channel"		"CHAN_BODY"
+	"volume"		"0.6"
+	"soundlevel"		"SNDLVL_80db"
+	"pitch"			"95,105"
+	"wave"			"p1_pgun/portal_close1.wav"
+}
+
+"Portal.ambient_loop"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"		"1.0"
+	"soundlevel"		"SNDLVL_70db"
+	"pitch"			"110"
+	"wave"			"p1_pgun/portal_ambient_loop1.wav"
+}
+
+"Portal.fizzle_moved"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"0.5"
+	"soundlevel"		"SNDLVL_105db"
+	"pitch"			"95,105"
+	"wave"			"p1_pgun/portal_fizzle2.wav"
+}
+
+"Portal.fizzle_invalid_surface"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"0.5"
+	"soundlevel"		"SNDLVL_90db"
+	"pitch"			"95,105"
+    "wave"			"p1_pgun/portal_invalid_surface3.wav"
+
+	"soundentry_version" "2"
+	"operator_stacks"
+	{
+		"start_stack"
+		{
+			"import_stack" 	"P2_exclusion_time_and_poly_limiting_start"
+
+			"limit_sound"
+			{
+				"match_entry" "Portal.fizzle_invalid_surface"
+				"input_max_entries" "1.000000"
+				"match_substring" "true"
+			}
+				
+			"block_entries"
+			{
+				"match_entry" "Portal.fizzle_invalid_surface" //The sound entry to use
+				"input_duration" "0.1" //in seconds
+			}
+		}
+	}
+}
+
+"PortalPlayer.EnterPortal"
+{
+    "channel"       "CHAN_STATIC"
+    "volume"        "0.5"
+    "soundlevel"        "SNDLVL_70db"
+    "pitch"         "95,105"
+    "rndwave"
+    {
+        
+        "wave"          "p1_pgun/portal_enter1.wav"
+        "wave"          "p1_pgun/portal_enter2.wav"
+    }
+}
+
+"PortalPlayer.ExitPortal"
+{
+    "channel"       "CHAN_STATIC"
+    "volume"        "0.5"
+    "soundlevel"        "SNDLVL_70db"
+    "pitch"         "95,105"
+    "rndwave"
+    {
+
+        "wave"          "p1_pgun/portal_exit1.wav"
+        "wave"          "p1_pgun/portal_exit2.wav"
+    }
+}
+
+"PortalPlayer.Woosh"
+{
+    "channel"       "CHAN_STATIC"
+    "volume"        "0.9"
+    "soundlevel"        "SNDLVL_75dB"
+    "pitch"         "140"
+    "wave"          "p1_pgun/fling_whoosh.wav"
+}
+
+"PortalPlayer.FallRecover"
+{
+    "channel"   "CHAN_STATIC"
+    "volume"    "0.40"
+    "pitch"     "95,105"
+    "soundlevel"    "SNDLVL_NORM"
+
+    "rndwave"
+    {
+        "wave"      "p1_pgun/futureshoes1.wav"
+        "wave"      "p1_pgun/futureshoes2.wav"
+    }
+}
+
+"PortalPlayer.WooshWooshyWoosh"
+{
+    "channel"       "CHAN_STATIC"
+    "volume"        "0.9"
+    "soundlevel"        "SNDLVL_75dB"
+    "pitch"         "140"
+    "wave"          "p1_pgun/fling_whoosh.wav"
+}
+
+"PortalPlayer.ObjectUseStop"
+{
+	"channel"		"CHAN_AUTO"
+	"soundlevel"  "SNDLVL_75dB"
+	"volume"		"0.5"
+	"wave"		"p1_pgun/object_use_stop_01.wav"
+
+	"soundentry_version" "2"
+
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"import_stack" "p2_update_default"
+		}
+	}
+}
+
+"PortalPlayer.ObjectUse"
+{
+	"channel"		"CHAN_AUTO"
+	"soundlevel"  "SNDLVL_75dB"
+	"volume"		"0.8"
+	"wave"		"p1_pgun/object_use_lp_01.wav"
+
+	"soundentry_version" "2"
+
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"import_stack"	"p2_update_default_pitch_ramp"
+			
+			"source_info"
+			{
+				"source"   "entity"
+			}
+		
+			"volume_get_map_name"
+			{
+				"input_execute" "1.0"
+				"map_name" "sp_a1_wakeup" //your map name here
+			}	
+			
+			"volume_map_name_scalar"
+			{
+				"input_map_min" "0.8" //This is the map-specific volume scalar
+			}
+		
+			"volume_fade_initial"
+			{
+				"input_execute" "1.0"
+				"input_min" "3.0"
+				"input_max" "15.0"
+				"input_map_min" "0.0"
+				"input_map_max" "0.5"	
+			}				
+			
+			"volume_mult"
+			{
+				"input1" "@volume_map_name_scalar.output"
+			}
+
+			// "volume_apply_falloff"
+			// {
+				// "input2" "1.0" //no falloff
+			// }
+
+			"volume_fade_in"
+			{
+				"input_max" "0.15" //fade in time
+			}			
+			
+			"volume_fade_out"
+			{
+				"input_max" "0.7" //fade out time
+			}
+			
+			"pitch_fade_in"
+			{
+				"input_map_min" "0.7" //pitch to fade in from
+				"input_map_max" "1.0" //pitch to fade in to
+				"default_to_max" "false"	
+			}
+			
+			"save_restore_output"
+			{
+				"operator" "sys_output"
+				"execute_once" "true"
+				"input_float" "1.0"
+				"output" "save_restore"
+			}
+		}
+		
+		"stop_stack"
+		{
+			"import_stack" "stop_and_play"
+		
+			"play_entry"
+			{
+				"entry_name" "PortalPlayer.ObjectUseStop"
+			}		
+		}
+	}
+}
+
+
+"PortalPlayer.UseDeny"
+{
+	"channel"	"CHAN_AUTO"
+	"volume"	"0.3"
+	"soundlevel"  "SNDLVL_75dB"
+	"wave"	"p1_pgun/object_use_failure_01.wav"
+}
+
+"PortalPlayer.ObjectUseNoGun"
+{
+	"channel"		"CHAN_AUTO"
+	"soundlevel"  "SNDLVL_75dB"
+	"volume"		"0.00"
+	"wave"		"p1_pgun/object_use_no_gun_01.wav"
+}
+
+"PortalPlayer.UseDenyNoGun"
+{
+	"channel"	"CHAN_AUTO"
+	"volume"	"0.15"
+	"soundlevel"  "SNDLVL_75dB"
+	"wave"		"p1_pgun/object_use_no_gun_01.wav"
+}

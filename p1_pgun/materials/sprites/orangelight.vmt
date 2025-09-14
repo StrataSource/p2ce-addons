@@ -1,0 +1,9 @@
+UnlitGeneric
+{
+$basetexture "sprites/orangelight01.vtf"
+
+$additive 1
+$vertexcolor 1
+$vertexalpha 1
+$nocull 1
+}

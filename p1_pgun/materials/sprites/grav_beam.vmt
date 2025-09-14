@@ -1,0 +1,7 @@
+UnlitGeneric
+{
+$additive 1
+$basetexture "sprites/grav_beam"
+$vertexcolor 1
+$vertexalpha 1
+}
