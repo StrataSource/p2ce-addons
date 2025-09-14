@@ -40,6 +40,23 @@
 				"input_duration" "0.1" //in seconds
 			}
 		}
+
+		"update_stack"
+		{
+			"import_stack" "p2_update_music_spatial_portals"
+			"source_info"
+			{
+				"source"   "entity"
+			}
+			"volume_apply_occlusion"
+			{
+				"input2" "1.0"
+			}
+			"speakers_spatialize"
+			{
+				"input_radius"  "200"
+			}
+		}
 	}	
 }
 
@@ -60,6 +77,27 @@
 		"wave"			"npc/turret_floor/turret_autosearch_5.wav"
 		"wave"			"npc/turret_floor/turret_autosearch_6.wav"
 	}
+
+	"soundentry_version" "2"
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"import_stack" "p2_update_music_spatial_portals"
+			"source_info"
+			{
+				"source"   "entity"
+			}
+			"volume_apply_occlusion"
+			{
+				"input2" "1.0"
+			}
+			"speakers_spatialize"
+			{
+				"input_radius"  "200"
+			}
+		}
+	}
 }
 
 "NPC_FloorTurret.TalkDeploy"
@@ -78,6 +116,27 @@
 		"wave"			"npc/turret_floor/turret_deploy_4.wav"
 		"wave"			"npc/turret_floor/turret_deploy_5.wav"
 		"wave"			"npc/turret_floor/turret_deploy_6.wav"
+	}
+
+	"soundentry_version" "2"
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"import_stack" "p2_update_music_spatial_portals"
+			"source_info"
+			{
+				"source"   "entity"
+			}
+			"volume_apply_occlusion"
+			{
+				"input2" "1.0"
+			}
+			"speakers_spatialize"
+			{
+				"input_radius"  "200"
+			}
+		}
 	}
 }
 
@@ -99,6 +158,27 @@
 		"wave"			"npc/turret_floor/turret_disabled_6.wav"
 		"wave"			"npc/turret_floor/turret_disabled_7.wav"
 		"wave"			"npc/turret_floor/turret_disabled_8.wav"
+	}
+
+	"soundentry_version" "2"
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"import_stack" "p2_update_music_spatial_portals"
+			"source_info"
+			{
+				"source"   "entity"
+			}
+			"volume_apply_occlusion"
+			{
+				"input2" "1.0"
+			}
+			"speakers_spatialize"
+			{
+				"input_radius"  "200"
+			}
+		}
 	}
 }
 
@@ -123,6 +203,27 @@
 		"wave"			"npc/turret_floor/turret_pickup_9.wav"
 		"wave"			"npc/turret_floor/turret_pickup_10.wav"
 	}
+
+	"soundentry_version" "2"
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"import_stack" "p2_update_music_spatial_portals"
+			"source_info"
+			{
+				"source"   "entity"
+			}
+			"volume_apply_occlusion"
+			{
+				"input2" "1.0"
+			}
+			"speakers_spatialize"
+			{
+				"input_radius"  "200"
+			}
+		}
+	}
 }
 
 "NPC_FloorTurret.TalkRetire"
@@ -143,6 +244,27 @@
 		"wave"			"npc/turret_floor/turret_retire_6.wav"
 		"wave"			"npc/turret_floor/turret_retire_7.wav"
 	}
+
+	"soundentry_version" "2"
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"import_stack" "p2_update_music_spatial_portals"
+			"source_info"
+			{
+				"source"   "entity"
+			}
+			"volume_apply_occlusion"
+			{
+				"input2" "1.0"
+			}
+			"speakers_spatialize"
+			{
+				"input_radius"  "200"
+			}
+		}
+	}
 }
 
 "NPC_FloorTurret.TalkSearch"
@@ -159,6 +281,27 @@
 		"wave"			"npc/turret_floor/turret_search_2.wav"
 		"wave"			"npc/turret_floor/turret_search_3.wav"
 		"wave"			"npc/turret_floor/turret_search_4.wav"
+	}
+
+	"soundentry_version" "2"
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"import_stack" "p2_update_music_spatial_portals"
+			"source_info"
+			{
+				"source"   "entity"
+			}
+			"volume_apply_occlusion"
+			{
+				"input2" "1.0"
+			}
+			"speakers_spatialize"
+			{
+				"input_radius"  "200"
+			}
+		}
 	}
 }
 
@@ -179,6 +322,177 @@
 		"wave"			"npc/turret_floor/turret_tipped_5.wav"
 		"wave"			"npc/turret_floor/turret_tipped_6.wav"
 	}
+
+	"soundentry_version" "2"
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"import_stack" "p2_update_music_spatial_portals"
+			"source_info"
+			{
+				"source"   "entity"
+			}
+			"volume_apply_occlusion"
+			{
+				"input2" "1.0"
+			}
+			"speakers_spatialize"
+			{
+				"input_radius"  "200"
+			}
+		}
+	}
+}
+
+"NPC_FloorTurret.TalkFlung"
+{
+	"channel"		"CHAN_VOICE"
+	"soundlevel"		"SNDLVL_TALKING"
+	"rndwave"
+	{
+		"wave"		"npc/turret/TurretLaunched01.wav"
+		"wave"		"npc/turret/TurretLaunched02.wav"
+		"wave"		"npc/turret/TurretLaunched03.wav"
+		"wave"		"npc/turret/TurretLaunched04.wav"
+		"wave"		"npc/turret/TurretLaunched05.wav"
+		"wave"		"npc/turret/TurretLaunched06.wav"
+		"wave"		"npc/turret/TurretLaunched07.wav"
+		"wave"		"npc/turret/TurretLaunched08.wav"
+		"wave"		"npc/turret/TurretLaunched09.wav"
+		"wave"		"npc/turret/TurretLaunched10.wav"
+		"wave"		"npc/turret/TurretLaunched11.wav"
+	}
+
+	"soundentry_version" "2"
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"import_stack" "p2_update_music_spatial_portals"
+			"source_info"
+			{
+				"source"   "entity"
+			}
+			"volume_apply_occlusion"
+			{
+				"input2" "1.0"
+			}
+			"speakers_spatialize"
+			{
+				"input_radius"  "200"
+			}
+		}
+	}
+}
+"NPC_FloorTurret.TalkBurned"
+{
+	"channel"		"CHAN_VOICE"
+	"soundlevel"		"SNDLVL_TALKING"
+	"rndwave"
+	{
+		"wave"		"npc/turret/TurretShotbylaser01.wav"
+		"wave"		"npc/turret/TurretShotbylaser02.wav"
+		"wave"		"npc/turret/TurretShotbylaser03.wav"
+		"wave"		"npc/turret/TurretShotbylaser04.wav"
+	}
+
+	"soundentry_version" "2"
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"import_stack" "p2_update_music_spatial_portals"
+			"source_info"
+			{
+				"source"   "entity"
+			}
+			"volume_apply_occlusion"
+			{
+				"input2" "1.0"
+			}
+			"speakers_spatialize"
+			{
+				"input_radius"  "200"
+			}
+		}
+	}
+}
+"NPC_FloorTurret.TalkStartBurning"
+{
+	"channel"		"CHAN_VOICE"
+	"soundlevel"		"SNDLVL_TALKING"
+	"rndwave"
+	{
+		"wave"		"npc/turret/TurretShotbylaser05.wav"
+		"wave"		"npc/turret/TurretShotbylaser06.wav"
+		"wave"		"npc/turret/TurretShotbylaser07.wav"
+		"wave"		"npc/turret/TurretShotbylaser08.wav"
+		"wave"		"npc/turret/TurretShotbylaser09.wav"
+		"wave"		"npc/turret/TurretShotbylaser10.wav"
+	}
+
+	"soundentry_version" "2"
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"import_stack" "p2_update_music_spatial_portals"
+			"source_info"
+			{
+				"source"   "entity"
+			}
+			"volume_apply_occlusion"
+			{
+				"input2" "1.0"
+			}
+			"speakers_spatialize"
+			{
+				"input_radius"  "200"
+			}
+		}
+	}
+}
+
+"NPC_FloorTurret.Distressed"
+{
+	"channel"		"CHAN_VOICE"
+	"soundlevel"		"SNDLVL_TALKING"
+	"rndwave"
+	{
+		"wave"		"npc/turret/TurretLaunched01.wav"
+		"wave"		"npc/turret/TurretLaunched02.wav"
+		"wave"		"npc/turret/TurretLaunched03.wav"
+		"wave"		"npc/turret/TurretLaunched04.wav"
+		"wave"		"npc/turret/TurretLaunched05.wav"
+		"wave"		"npc/turret/TurretLaunched06.wav"
+		"wave"		"npc/turret/TurretLaunched07.wav"
+		"wave"		"npc/turret/TurretLaunched08.wav"
+		"wave"		"npc/turret/TurretLaunched09.wav"
+		"wave"		"npc/turret/TurretLaunched10.wav"
+		"wave"		"npc/turret/TurretLaunched11.wav"
+	}
+
+	"soundentry_version" "2"
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"import_stack" "p2_update_music_spatial_portals"
+			"source_info"
+			{
+				"source"   "entity"
+			}
+			"volume_apply_occlusion"
+			{
+				"input2" "1.0"
+			}
+			"speakers_spatialize"
+			{
+				"input_radius"  "200"
+			}
+		}
+	}
 }
 
 // NEW FOR UNUSED TURRRT VO ADDON
@@ -197,5 +511,26 @@
 		"wave"			"npc/turret/turretlightbridgeblock02.wav"
 		"wave"			"npc/turret/turretlightbridgeblock03.wav"
 		"wave"			"npc/turret/turretlightbridgeblock04.wav"
+	}
+
+	"soundentry_version" "2"
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"import_stack" "p2_update_music_spatial_portals"
+			"source_info"
+			{
+				"source"   "entity"
+			}
+			"volume_apply_occlusion"
+			{
+				"input2" "1.0"
+			}
+			"speakers_spatialize"
+			{
+				"input_radius"  "200"
+			}
+		}
 	}
 }
