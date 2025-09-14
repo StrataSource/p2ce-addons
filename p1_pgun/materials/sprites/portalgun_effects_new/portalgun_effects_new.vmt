@@ -1,0 +1,10 @@
+//SpriteCard
+UnlitGeneric
+{
+	$basetexture "sprites/portalgun_effects_new/portalgun_effects_new"
+	$spriteorientation "vp_parallel"
+	//$selfillum
+	$additive 1
+	$vertexcolor 1 
+	$vertexalpha 1
+}

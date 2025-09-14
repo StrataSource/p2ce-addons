@@ -1,0 +1,11 @@
+//SpriteCard
+UnlitGeneric
+{
+$basetexture "sprites\portalgun_effects_new/combinemuzzle_special"
+$additive 1
+$vertexalpha 1
+$vertexcolor 1
+$translucent 1
+"360?$gammaColorRead" 1
+"360?$linearWrite" 1
+}

@@ -1,0 +1,10 @@
+SpriteCard
+{
+$basetexture "sprites/bluelight01.vtf"
+
+$additive 1
+$vertexcolor 1
+$vertexalpha 1
+$spriteorientation "4"
+$nocull 1
+}
