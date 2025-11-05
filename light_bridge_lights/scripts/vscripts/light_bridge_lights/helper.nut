@@ -19,27 +19,3 @@ if(!("Dev" in getroottable())) {
         }
     }
 }
-
-// useful array functions
-if(!("ArrExtended" in getroottable())) {
-    ::ArrExtended <- {
-        function Find(arr, val) {
-            foreach(item in arr) {
-                if(item == val) return true
-            }
-            return false
-        }
-
-        function printArray(arr, name = "array") {
-            if(arr == null) {
-                Dev.msgDeveloper(name + " is null")
-                return
-            }
-
-            Dev.msgDeveloper("Contents of " + name + ":")
-            foreach(idx, val in arr) {
-                Dev.msgDeveloper("  [" + idx + "] = " + val + "\n")
-            }
-        }
-    }
-}

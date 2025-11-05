@@ -24,11 +24,11 @@ function scriptInit() {   // if player exists, other entities exist
 const LIGHT_BRIGHTNESS = 40
 const LIGHT_D50 = 50
 const LIGHT_D0 = 300
-const LIGHT_SHADOWSIZE = -1 // DONT CHANGE THIS FROM -1, it'll just instantly overwhelms the shadow atlas (-1 = no shadows)
+const LIGHT_SHADOWSIZE = -1 // DONT CHANGE THIS FROM -1, it just instantly overwhelms the shadow atlas (-1 = no shadows)
 
 const LIGHT_SPACING = 20  // distance between lights in units, less spacing means more lights but a higher performance cost
 
-bridgesCached <- []
+bridgesCached <- [] // stores bridge handles and their entindexes
 bridgeLightCountPrevious <- {}
 bridgesCacheMarkedForReset <- false
 const CACHE_REFRESH_TIME = 0.01
@@ -36,7 +36,9 @@ const CACHE_REFRESH_TIME = 0.01
 // traces used for calculating bridge length
 const TRACE_DISTANCE = 8192
 TRACE_MASK <- MASK_SOLID | MASK_WATER | MASK_BLOCKLOS
-TRACE_COLLISION_GROUP <- COLLISION_GROUP_PLAYER
+TRACE_COLLISION_GROUP <- COLLISION_GROUP_NONE
+TRACE_BOUNDS_MIN <- Vector(-12, -12, -12)
+TRACE_BOUNDS_MAX <- Vector(12, 12, 12)
 
 function Setup() {
     Dev.msgDeveloper("Creating cache refresh timer...")
@@ -45,30 +47,33 @@ function Setup() {
     })
     loopTimer.ConnectOutput("OnTimer", "bridgeCacheRefresh")
     bridgeCacheRefresh()  // initial cache
-
-    local svCmd = CreateEntityByName("point_servercommand", {
-        targetname = "lightbridgelights_svcommand"
-    })
-    Dev.EntFireByHandleCompressed(svCmd, "Command", "sv_alternateticks 0")  // ensure bridge lights update as fast as possible
-    EntFire("lightbridgelights_svcommand", "Kill", "", FrameTime())
 }
 
 function bridgeCacheRefresh() {
     if(bridgesCacheMarkedForReset) {
+        foreach(idx, data in bridgesCached) {
+            local bridgeIndex = data.index
+            lightRemoveAtBridge(bridgeIndex)    // prevent duplicate lights
+
+            bridgesCached.remove(idx)   // dont attempt to remove lights at this bridge again
+        }
         bridgeCacheReset()
         bridgesCacheMarkedForReset = false
     }
 
-    foreach(idx, bridge in bridgesCached) {
+    foreach(data in bridgesCached) {
+        local bridge = data.bridge
+        local bridgeIndex = data.index
+
         // reset the cache if any cached bridges are invalid
         // one small problem with this is it causes all lights to respawn (hence a small flicker), but it's better than crashing
+
         if(!bridge.IsValid()) { 
-            lightRemoveAtBridge(bridge)
+            lightRemoveAtBridge(bridgeIndex)
             bridgesCacheMarkedForReset = true   // wait until next tick to prevent crashes
             break
         }
 
-        local bridgeIndex = bridge.entindex()
         local lightCountNew = bridgeGetLightCount(bridge)
 
         // get old light count, or use new light count if not found
@@ -76,23 +81,36 @@ function bridgeCacheRefresh() {
 
         // check if light count has changed
         if(lightCountNew != lightCountOld) {
-            if(lightCountNew < lightCountOld) lightRemoveAtBridge(bridge, lightCountNew)    // remove lights if bridge has shrunk
+            if(lightCountNew < lightCountOld) lightRemoveAtBridge(bridgeIndex, lightCountNew)    // remove lights if bridge has shrunk
             if(lightCountNew > lightCountOld) lightSpawnAtBridge(bridge, lightCountOld) // spawn additional lights
             bridgeLightCountPrevious[bridgeIndex] <- lightCountNew
         }
     }
 
     for(local bridge = null; bridge = Entities.FindByClassname(bridge, "projected_wall_entity");) {
-        if(ArrExtended.Find(bridgesCached, bridge) || !bridge.IsValid()) continue   // skip cached bridges or invalid bridges
+        if(bridgeIsCached(bridge) || !bridge.IsValid()) continue   // skip cached bridges or invalid bridges
 
         // update cache with new bridge
-        bridgesCached.append(bridge)
+
         local bridgeIndex = bridge.entindex()
+
+        bridgesCached.append({
+            bridge = bridge,
+            index = bridgeIndex
+        })
+
         local bridgeLightCount = bridgeGetLightCount(bridge)
         bridgeLightCountPrevious[bridgeIndex] <- bridgeLightCount   // store initial lightcount in a table based on entindex() for comparison later
 
         lightSpawnAtBridge(bridge)
     }
+}
+
+function bridgeIsCached(bridge) {
+    foreach(data in bridgesCached) {
+        if(data.bridge == bridge) return true
+    }
+    return false
 }
 
 function bridgeCacheReset() {
@@ -104,7 +122,7 @@ function bridgeCacheReset() {
 function bridgeCalculateLength(bridge) {
     local pos = bridge.GetOrigin()
     local forward = bridge.GetForwardVector()
-    local ray = TraceLineEx(pos, pos + (forward * TRACE_DISTANCE), TRACE_MASK, bridge, TRACE_COLLISION_GROUP)
+    local ray = TraceHull(pos, pos + (forward * TRACE_DISTANCE), TRACE_BOUNDS_MIN, TRACE_BOUNDS_MAX, TRACE_MASK, bridge, TRACE_COLLISION_GROUP)
 
     return Dev.distance(pos, ray.GetEndPos())
 }
@@ -118,7 +136,7 @@ function bridgeGetLightCount(bridge) {
 function lightSpawnAtBridge(bridge, currentLightCount = 0) {
     local bridgeLength = bridgeCalculateLength(bridge)
     local lightCount = bridgeGetLightCount(bridge)
-    local bridgeName = bridge.GetName()
+    local bridgeIndex = bridge.entindex()
 
     Dev.msgDeveloper("Spawning " + (lightCount - currentLightCount) + " lights.")
 
@@ -127,7 +145,7 @@ function lightSpawnAtBridge(bridge, currentLightCount = 0) {
         local light = lightCreate(bridge.GetOrigin() + (bridge.GetForwardVector() * distance))
 
         light.SetParent(bridge)
-        light.__KeyValueFromString("targetname", bridgeName + "_light" + i)
+        light.__KeyValueFromString("targetname", bridgeIndex + "_light" + i)
     }
 }
 
@@ -148,18 +166,15 @@ function lightCreate(pos) {    // returns light handle
     return light
 }
 
-function lightRemoveAtBridge(bridge, numLightsToKeep = 0) {
-    local bridgeName = ""  // give it something to stop it complaining and breaking everything else
-    if(bridge.IsValid()) local bridgeName = bridge.GetName()
-
-    Dev.msgDeveloper("Removing lights from bridge starting at index " + numLightsToKeep + ".")
+function lightRemoveAtBridge(bridgeIndex, numLightsToKeep = 0) { 
+    Dev.msgDeveloper("Removing lights from bridgeIndex " + bridgeIndex + " starting at light index " + numLightsToKeep + ".")
 
     // how many lights could ever exist on this bridge given the current settings
     local numLightsPotential = (TRACE_DISTANCE / LIGHT_SPACING) 
 
     for(local i = numLightsToKeep; i < numLightsToKeep + numLightsPotential; i++) { // remove all lights from index numLightsToKeep onwards
-        local light = Entities.FindByName(null, bridgeName + "_light" + i)
-        if(light != null) EntFire(bridgeName + "_light" + i, "Kill")
+        local light = Entities.FindByName(null, bridgeIndex + "_light" + i)
+        if(light != null) Dev.EntFireByHandleCompressed(light, "Kill")
     }
 }
 
