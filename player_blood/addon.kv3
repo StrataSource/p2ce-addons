@@ -18,4 +18,5 @@
 	assets = 
 	{
 	}
+	mounted_by_default = false
 }
