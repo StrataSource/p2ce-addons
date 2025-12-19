@@ -1,6 +1,6 @@
 // table containing useful dev functions
-if(!("Dev" in getroottable())) {
-    ::Dev <- {
+if(!("UTV_Dev" in getroottable())) {
+    ::UTV_Dev <- {
         function msg(msg) {
             printl("[UNUSED TURRET VO] " + msg)
         }

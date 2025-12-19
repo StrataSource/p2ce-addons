@@ -1,6 +1,6 @@
 // table containing useful dev functions
-if(!("Dev" in getroottable())) {
-    ::Dev <- {
+if(!("LBL_Dev" in getroottable())) {
+    ::LBL_Dev <- {
         function msg(msg) {
             printl("[LIGHT BRIDGE LIGHTS] " + msg)
         }
