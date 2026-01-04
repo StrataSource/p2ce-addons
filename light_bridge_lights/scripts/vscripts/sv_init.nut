@@ -11,13 +11,13 @@ function LBL_scriptInit() {
     }
 }
 
-LBL_LIGHT_COLOUR <- Vector(63, 196, 252)  // RGB colour values - light blue
-const LBL_LIGHT_BRIGHTNESS = 40
+LBL_LIGHT_COLOUR <- Vector(25, 175, 255)  // RGB colour values - light blue
+const LBL_LIGHT_BRIGHTNESS = 50
 const LBL_LIGHT_D50 = 50
 const LBL_LIGHT_D0 = 300
 const LBL_LIGHT_SHADOWSIZE = -1 // DONT CHANGE THIS FROM -1, it just instantly overwhelms the shadow atlas (-1 = no shadows)
 
-const LBL_LIGHT_SPACING = 20  // distance between lights in units, less spacing means more lights but a higher performance cost
+const LBL_LIGHT_SPACING = 24  // distance between lights in units, less spacing means more lights but a higher performance cost
 const LBL_LIGHT_MAXCOUNT = 128  // maximum number of lights per bridge to prevent performance issues
 
 const LBL_LIGHT_SPECIFIC_HEALTH = 27852 // used to identify lights created by this script
@@ -172,7 +172,9 @@ function LBL_lightCreate(pos) {    // returns light handle
     local light = null
 
     light = CreateEntityByName("light_rt", {
-        _lightmode = 3,
+        _specularmode = 0,
+        _indirectmode = 0,
+        _directmode = 2,
         spawnflags = 2
     })
     light.SetLightColor(LBL_LIGHT_COLOUR, LBL_LIGHT_BRIGHTNESS)
@@ -212,4 +214,4 @@ function LBL_lightRemoveAll() {
 }
 
 LBL_auto <- CreateEntityByName("logic_auto", {spawnflags = 1})
-LBL_auto.ConnectOutput("OnNewGame", "LBL_scriptInit")
+LBL_auto.ConnectOutput("OnMapSpawn", "LBL_scriptInit")
