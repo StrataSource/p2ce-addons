@@ -1,0 +1,464 @@
+{
+	"hl2" = {
+		title = "#MainMenu_Campaigns_hl2"
+		
+		unlock_all = false
+
+		meta = {
+			// uses addon author if not provided
+			author = "#MainMenu_Campaigns_Valve_Author"
+			desc = "#MainMenu_Campaigns_hl2_Description"
+			box_art = "hl2/boxart.png"
+			selector_cover = "hl2/campaign_cover.png"
+			square_logo = "hl2/logo.svg"
+			// unit is in pixels, must be a number
+			loading_square_logo_padding = "10"
+			selector_button_background = "hl2/campaign_btn_bg.png"
+			full_logo = "hl2/full_logo.svg"
+		}
+		
+		chapters = [
+			{
+				title = "#hl2_Chapter1_Title"
+				save_comment = "#hl2_Chapter1_Title"
+				meta = {
+					thumbnail = "hl2/chapters/chapter1.png"
+					background_map = "background01"
+					background_image = "hl2/backgrounds/01.png"
+				}
+				maps = [
+					{name="d1_trainstation_01"},
+					{name="d1_trainstation_02"},
+					{name="d1_trainstation_03"},
+					{name="d1_trainstation_04"},
+				]
+			},
+			{
+				title = "#hl2_Chapter2_Title"
+				save_comment = "#hl2_Chapter2_Title"
+				meta = {
+					thumbnail = "hl2/chapters/chapter2.png"
+					background_map = "background01"
+					background_image = "hl2/backgrounds/01.png"
+				}
+				maps = [
+					{name="d1_trainstation_05"},
+					{name="d1_trainstation_06"},
+				]
+			},
+			{
+				title = "#hl2_Chapter3_Title"
+				save_comment = "#hl2_Chapter2_Title"
+				meta = {
+					thumbnail = "hl2/chapters/chapter3.png"
+					background_map = "background02"
+					background_image = "hl2/backgrounds/02.png"
+				}
+				maps = [
+					{name="d1_canals_01"},
+					{name="d1_canals_01a"},
+					{name="d1_canals_02"},
+					{name="d1_canals_03"},
+					{name="d1_canals_05"},
+				]
+			},
+			{
+				title = "#hl2_Chapter4_Title"
+				save_comment = "#hl2_Chapter5_Title"
+				meta = {
+					thumbnail = "hl2/chapters/chapter4.png"
+					background_map = "background02"
+					background_image = "hl2/backgrounds/02.png"
+				}
+				maps = [
+					{name="d1_canals_06"},
+					{name="d1_canals_07"},
+					{name="d1_canals_08"},
+					{name="d1_canals_09"},
+					{name="d1_canals_10"},
+					{name="d1_canals_11"},
+					{name="d1_canals_12"},
+					{name="d1_canals_13"},
+				]
+			},
+			{
+				title = "#hl2_Chapter5_Title"
+				save_comment = "#hl2_Chapter5_Title"
+				meta = {
+					thumbnail = "hl2/chapters/chapter5.png"
+					background_map = "background03"
+					background_image = "hl2/backgrounds/03.png"
+				}
+				maps = [
+					{name="d1_eli_01"},
+					{name="d1_eli_02"},
+				]
+			},
+			{
+				title = "#hl2_Chapter6_Title"
+				save_comment = "#hl2_Chapter6_Title"
+				meta = {
+					thumbnail = "hl2/chapters/chapter6.png"
+					background_map = "background03"
+					background_image = "hl2/backgrounds/03.png"
+				}
+				maps = [
+					{name="d1_town_01"},
+					{name="d1_town_01a"},
+					{name="d1_town_02"},
+					{name="d1_town_02a"},
+					{name="d1_town_03"},
+					{name="d1_town_04"},
+					{name="d1_town_05"},
+				]
+			},
+			{
+				title = "#hl2_Chapter7_Title"
+				save_comment = "#hl2_Chapter7_Title"
+				meta = {
+					thumbnail = "hl2/chapters/chapter7.png"
+					background_map = "background04"
+					background_image = "hl2/backgrounds/04.png"
+				}
+				maps = [
+					{name="d2_coast_01"},
+					{name="d2_coast_03"},
+					{name="d2_coast_04"},
+					{name="d2_coast_05"},
+					{name="d2_coast_07"},
+					{name="d2_coast_08"},
+				]
+			},
+			{
+				title = "#hl2_Chapter8_Title"
+				save_comment = "#hl2_Chapter8_Title"
+				meta = {
+					thumbnail = "hl2/chapters/chapter8.png"
+					background_map = "background04"
+					background_image = "hl2/backgrounds/04.png"
+				}
+				maps = [
+					{name="d2_coast_09"},
+					{name="d2_coast_10"},
+					{name="d2_coast_11"},
+					{name="d2_coast_12"},
+					{name="d2_prison_01"},
+				]
+			},
+			{
+				title = "#hl2_Chapter9_Title"
+				save_comment = "#hl2_Chapter9_Title"
+				meta = {
+					thumbnail = "hl2/chapters/chapter9.png"
+					background_map = "background05"
+					background_image = "hl2/backgrounds/05.png"
+				}
+				maps = [
+					{name="d2_prison_02"},
+					{name="d2_prison_03"},
+					{name="d2_prison_04"},
+					{name="d2_prison_05"},
+				]
+			},
+			{
+				title = "#hl2_Chapter9a_Title"
+				save_comment = "#hl2_Chapter9a_Title"
+				meta = {
+					thumbnail = "hl2/chapters/chapter9a.png"
+					background_map = "background05"
+					background_image = "hl2/backgrounds/05.png"
+				}
+				maps = [
+					{name="d2_prison_02"},
+					{name="d2_prison_03"},
+					{name="d2_prison_04"},
+					{name="d2_prison_05"},
+					{name="d2_prison_06"},
+					{name="d2_prison_07"},
+					{name="d2_prison_08"},
+					{name="d3_c17_01"},
+				]
+			},
+			{
+				title = "#hl2_Chapter10_Title"
+				save_comment = "#hl2_Chapter10_Title"
+				meta = {
+					thumbnail = "hl2/chapters/chapter10.png"
+					background_map = "background06"
+					background_image = "hl2/backgrounds/06.png"
+				}
+				maps = [
+					{name="d3_c17_02"},
+					{name="d3_c17_03"},
+					{name="d3_c17_04"},
+					{name="d3_c17_05"},
+					{name="d3_c17_06a"},
+					{name="d3_c17_06b"},
+					{name="d3_c17_07"},
+					{name="d3_c17_08"},
+				]
+			},
+			{
+				title = "#hl2_Chapter11_Title"
+				save_comment = "#hl2_Chapter11_Title"
+				meta = {
+					thumbnail = "hl2/chapters/chapter11.png"
+					background_map = "background06"
+					background_image = "hl2/backgrounds/06.png"
+				}
+				maps = [
+					{name="d3_c17_09"},
+					{name="d3_c17_10a"},
+					{name="d3_c17_10b"},
+					{name="d3_c17_11"},
+					{name="d3_c17_12"},
+					{name="d3_c17_12b"},
+					{name="d3_c17_13"},
+				]
+			},
+			{
+				title = "#hl2_Chapter12_Title"
+				save_comment = "#hl2_Chapter12_Title"
+				meta = {
+					thumbnail = "hl2/chapters/chapter12.png"
+					background_map = "background07"
+					background_image = "hl2/backgrounds/07.png"
+				}
+				maps = [
+					{name="d3_citadel_01"},
+					{name="d3_citadel_02"},
+					{name="d3_citadel_03"},
+					{name="d3_citadel_04"},
+					{name="d3_citadel_05"},
+				]
+			},
+			{
+				title = "#hl2_Chapter13_Title"
+				save_comment = "#hl2_Chapter13_Title"
+				meta = {
+					thumbnail = "hl2/chapters/chapter13.png"
+					background_map = "background07"
+					background_image = "hl2/backgrounds/07.png"
+				}
+				maps = [
+					{name="d3_breen_01"},
+				]
+			},
+			{
+				title = "#hl2_Chapter14_Title"
+				save_comment = "#hl2_Chapter13_Title"
+				meta = {
+					thumbnail = "hl2/chapters/chapter14.png"
+					background_map = "background07"
+					background_image = "hl2/backgrounds/07.png"
+				}
+				maps = [
+					{name="credits"},
+				]
+			},
+		]
+	}
+	"episodic" = {
+		title = "#MainMenu_Campaigns_episodic"
+		
+		unlock_all = false
+
+		meta = {
+			author = "#MainMenu_Campaigns_Valve_Author"
+			desc = "#MainMenu_Campaigns_episodic_Description"
+			box_art = "episodic/boxart.jpg"
+			selector_cover = "episodic/campaign_cover.png"
+			square_logo = "hl2/logo.svg"
+			loading_square_logo_padding = "10"
+			selector_button_background = "episodic/campaign_btn_bg.jpg"
+			full_logo = "episodic/full_logo.svg"
+		}
+
+		chapters = [
+			{
+				title = "#episodic_Chapter1_Title"
+				save_comment = "#episodic_Chapter1_Title"
+				meta = {
+					thumbnail = "episodic/chapters/chapter1.png"
+					background_map = "ep1_background01"
+					background_image = "episodic/backgrounds/01.png"
+				}
+				maps = [
+					{name="ep1_citadel_00"},
+					{name="ep1_citadel_01"},
+					{name="ep1_citadel_02"},
+					{name="ep1_citadel_02b"},
+				]
+			},
+			{
+				title = "#episodic_Chapter2_Title"
+				save_comment = "#episodic_Chapter2_Title"
+				meta = {
+					thumbnail = "episodic/chapters/chapter2.png"
+					background_map = "ep1_background01"
+					background_image = "episodic/backgrounds/01.png"
+				}
+				maps = [
+					{name="ep1_citadel_03"},
+					{name="ep1_citadel_04"},
+				]
+			},
+			{
+				title = "#episodic_Chapter3_Title"
+				save_comment = "#episodic_Chapter3_Title"
+				meta = {
+					thumbnail = "episodic/chapters/chapter3.png"
+					background_map = "ep1_background01a"
+					background_image = "episodic/backgrounds/02.png"
+				}
+				maps = [
+					{name="ep1_c17_00"},
+					{name="ep1_c17_00a"},
+				]
+			},
+			{
+				title = "#episodic_Chapter4_Title"
+				save_comment = "#episodic_Chapter4_Title"
+				meta = {
+					thumbnail = "episodic/chapters/chapter4.png"
+					background_map = "ep1_background02"
+					background_image = "episodic/backgrounds/03.png"
+				}
+				maps = [
+					{name="ep1_c17_01"},
+					{name="ep1_c17_01a"},
+					{name="ep1_c17_02"},
+					{name="ep1_c17_02a"},
+					{name="ep1_c17_02b"},
+				]
+			},
+			{
+				title = "#episodic_Chapter5_Title"
+				save_comment = "#episodic_Chapter5_Title"
+				meta = {
+					thumbnail = "episodic/chapters/chapter5.png"
+					background_map = "ep1_background02"
+					background_image = "episodic/backgrounds/03.png"
+				}
+				maps = [
+					{name="ep1_c17_05"},
+					{name="ep1_c17_06"},
+				]
+			},
+		]
+	}
+	"ep2" = {
+		title = "#MainMenu_Campaigns_ep2"
+		
+		unlock_all = false
+
+		meta = {
+			author = "#MainMenu_Campaigns_Valve_Author"
+			desc = "#MainMenu_Campaigns_ep2_Description"
+			box_art = "ep2/boxart.png"
+			selector_cover = "ep2/campaign_cover.png"
+			square_logo = "ep2/logo_white.svg"
+			loading_square_logo_padding = "10"
+			selector_button_background = "ep2/campaign_btn_bg.png"
+			full_logo = "ep2/full_logo.svg"
+		}
+		
+		chapters = [
+			{
+				title = "#ep2_Chapter1_Title"
+				save_comment = "#ep2_Chapter1_Title"
+				meta = {
+					thumbnail = "ep2/chapters/chapter1.png"
+					background_map = "ep2_background01"
+					background_image = "ep2/backgrounds/01.png"
+				}
+				maps = [
+					{name="ep2_outland_01"},
+					{name="ep2_outland_01a"},
+				]
+			},
+			{
+				title = "#ep2_Chapter2_Title"
+				save_comment = "#ep2_Chapter2_Title"
+				meta = {
+					thumbnail = "ep2/chapters/chapter2.png"
+					background_map = "ep2_background02"
+					background_image = "ep2/backgrounds/02.png"
+				}
+				maps = [
+					{name="ep2_outland_02"},
+					{name="ep2_outland_03"},
+					{name="ep2_outland_04"},
+				]
+			},
+			{
+				title = "#ep2_Chapter3_Title"
+				save_comment = "#ep2_Chapter3_Title"
+				meta = {
+					thumbnail = "ep2/chapters/chapter3.png"
+					background_map = "ep2_background02"
+					background_image = "ep2/backgrounds/02.png"
+				}
+				maps = [
+					{name="ep2_outland_05"},
+					{name="ep2_outland_06"},
+				]
+			},
+			{
+				title = "#ep2_Chapter4_Title"
+				save_comment = "#ep2_Chapter4_Title"
+				meta = {
+					thumbnail = "ep2/chapters/chapter4.png"
+					background_map = "ep2_background02a"
+					background_image = "ep2/backgrounds/03.png"
+				}
+				maps = [
+					{name="ep2_outland_06a"},
+					{name="ep2_outland_07"},
+					{name="ep2_outland_08"},
+				]
+			},
+			{
+				title = "#ep2_Chapter5_Title"
+				save_comment = "#ep2_Chapter5_Title"
+				meta = {
+					thumbnail = "ep2/chapters/chapter5.png"
+					background_map = "ep2_background02a"
+					background_image = "ep2/backgrounds/03.png"
+				}
+				maps = [
+					{name="ep2_outland_09"},
+					{name="ep2_outland_10"},
+					{name="ep2_outland_10a"},
+				]
+			},
+			{
+				title = "#ep2_Chapter6_Title"
+				save_comment = "#ep2_Chapter6_Title"
+				meta = {
+					thumbnail = "ep2/chapters/chapter6.png"
+					background_map = "ep2_background03"
+					background_image = "ep2/backgrounds/04.png"
+				}
+				maps = [
+					{name="ep2_outland_11"},
+					{name="ep2_outland_11a"},
+					{name="ep2_outland_11b"},
+					{name="ep2_outland_12"},
+				]
+			},
+			{
+				title = "#ep2_Chapter7_Title"
+				save_comment = "#ep2_Chapter7_Title"
+				meta = {
+					thumbnail = "ep2/chapters/chapter7.png"
+					background_map = "ep2_background03"
+					background_image = "ep2/backgrounds/04.png"
+				}
+				maps = [
+					{name="ep2_outland_12a"},
+				]
+			},
+		]
+	}
+}

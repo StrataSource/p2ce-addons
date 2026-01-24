@@ -1,0 +1,269 @@
+{
+	// campaigns.kv3 is a file used to define your custom campaigns.
+	// Each campaign has a subset of metadata that all dictate your story, how your chapters are ordered and unlocked, and what art assets are used.
+	// Campaign saves are stored separately by P2:CE's save management system and will not conflict with other campaigns (e.g.: the Portal 2 base game, Half-Life 2, et cetera.).
+	// 
+	// You can specify multiple campaigns in this file, stored in your add-on's scripts directory.
+	// See the Half-Life 2 campaigns.kv3 file for an example.
+	//
+	// Addons with valid campaign KeyValue3 entry files can co-exist with one another, and will be detected by the campaign system in P2:CE.
+	//
+	// This is your campaign. It dictates the entirety of your story, and is used internally by P2:CE to enable campaign-specific features,
+	// such as progression tracking, save data isolation and chapter state control.
+	"CampaignDemo_SampleKV" = {
+	
+		// Define your campaign's title here. This is displayed by the UI, and additionally supports localization tokens as specified in "panorama_{LANGUAGE}.txt".
+		// This is required for publishing to the Workshop.
+		title = "Boingo Sploinko's Adventure"
+		
+		// Set this to false to lock all chapters except for chapter 1.
+		unlock_all = true
+		
+		// This is the metadata block. All information surrounding the campaign itself is displayed to the user at runtime.
+		// 
+		// Campaigns MUST specify the following metadata to function and be published to the Steam Workshop:
+		// 		- A title (specified above)
+		// 		- A description
+		//		- Box art
+		//		- A cover image
+		//		- A full logo
+		//
+		// Box art/capsules must be SPECIFICALLY sized at 600x900 (2:3 aspect ratio), conforming with the Steamworks library
+		// asset guidelines, located at the following URL: https://partner.steamgames.com/doc/store/assets/libraryassets
+		//
+		// Panorama supports loading JPEG, PNG and SVG graphics resources for campaign art assets. The campaign system will
+		// attempt to pull relevant resources from the .assets directory located at the root of your addon.
+		// Some of this metadata can be overridden by individual chapters and maps.
+		
+		meta = {
+			// Uses addon's author field if not provided.
+			author = "Copyright-Infringing Blåhaj"
+			
+			// Campaign description
+			desc = "Bongo Sploinko must work together with Bingus the Cat to face off the greatest evil the world has ever faced: alien cucumbers from outer space with distracting triple lasers!"
+			
+			// ===========
+			// Art assets
+			// ===========
+			
+			// Box art (600x900px)
+			box_art = "sploinko/boxart.png"
+			
+			// Cover image
+			selector_cover = "sploinko/campaign_cover.png"
+			
+			// Small logo (at least 48x48px large).
+			square_logo = "sploinko/logo.png"
+			
+			// Full campaign logo, as displayed in the campaign's main menu.
+			full_logo = "sploinko/full_logo.png"
+			
+			// Background for campaign entry, as displayed in selection UI
+			selector_button_background = "sploinko/campaign_btn_bg.png"
+		}
+		
+		// This is the chapters array. Each chapter can have a title, metadata (thumbnail, background images/videos/maps, music), and an array of associated maps.
+		// Failing to specify this data will cause the Panorama UI to failsafe and resort to placeholders.
+		//
+		// Any map can override this data by specifying a metadata block in its entry. A pre-defined localization token for your title and save comment
+		// can also be specified.
+		//
+		// Placeholder transition screens for individual maps can also be specified as is the case for Portal 2,
+		// which uses multiple transition screens for individual maps (see p2ce/scripts/campaign.kv3 for examples).
+		//
+		// Entering any map within a given chapter will automatically unlock that chapter.
+		
+		chapters = [
+			{
+				// This is the (localizable) name of your chapter.
+				title = "Boinkle"
+				
+				// This is the title of your chapter as displayed by saverestore.
+				save_comment = "Boinkle Save Comment"
+				
+				// Specify chapter metadata here.
+				meta = {
+					// The chapter thumbnail image. This is displayed in the chapter selection screen and the campaign settings menu.
+					thumbnail = "sploinko/chapters/chapter1.png"
+					
+					// Menu background assets. Chapters can have a static background image and a map or background video. Optional music can also play throughout the UI.
+					// Due to internal limitations, it is not possible to specify both a background movie AND a map at the same time.
+					// Should either the background map or video fail to load, background_image is displayed by the UI as a last resort.
+					
+					// background_movie = "media/menu_act01.webm"
+					// background_map = "p2ce_background_laser_intro"
+					background_music = "UIPanorama.Music.P2.Menu1"
+					background_image = "sploinko/campaign_bg.png"
+					
+					// Background images as displayed by the loading screen UI. This can be overridden by maps.
+					loading_screen = "sploinko/loading/loadingscreen_sample_ch1.png"
+					transition_screen = "sploinko/loading/loadingscreen_sample_ch1.png"
+				}
+				
+				// This is the list of maps associated with the chapter. Map-specific overrides (like the one specified in SDK_VEHICLES) can influence how the UI appears to the player.
+				maps = [
+					{ name = "sdk_template_mechanics" },
+					{ name = "sdk_vehicles" meta = { transition_screen = "vgui/loading_screens/loadingscreen_sample_ch1_alt" } },
+				]
+			},
+
+			{
+				// Chapter titles
+				title = "The Overseer"
+				save_comment = "Overseer Save Comment"
+				
+				// Chapter metadata
+				meta = {
+					// Thumbnail
+					thumbnail = "sploinko/chapters/chapter2.png"
+					
+					// Background assets
+					background_movie = "media/menu_act02.webm"
+					background_music = "UIPanorama.Music.P2.Menu2"
+					background_image = "{materials}/vgui/backgrounds/background02_widescreen.vtf"
+					
+					// Loading screens
+					loading_screen = "sploinko/loading/loadingscreen_sample_ch2.png"
+					transition_screen = "sploinko/loading/loadingscreen_sample_ch2.png"
+				}
+				
+				// Map list
+				maps = [
+					{ name = "d2_coast_01" },
+				]
+			},
+			
+			{
+				// Chapter titles
+				title = "The Glibblebink Factory"
+				save_comment = "Glibblebink Factory Save Comment"
+				
+				// Chapter metadata
+				meta = {
+					// Thumbnail
+					thumbnail = "sploinko/chapters/chapter3.png"
+					
+					// Background assets
+					background_map = "background02"
+					background_music = "UIPanorama.Music.P2.Menu3"
+					background_image = "{materials}/console/background02_widescreen.vtf"
+
+					// Loading screens
+					loading_screen = "sploinko/loading/loadingscreen_sample_ch3.png"
+					transition_screen = "sploinko/loading/loadingscreen_sample_ch3.png"
+				}
+				
+				// Map list
+				maps = [
+					{ name = "mp_coop_community_hub" },
+				]
+			},
+			
+			{
+				// Chapter titles
+				title = "We Do Go To Blibbletown..."
+				save_comment = "Blibbletown Save Comment"
+				
+				meta = {
+					// Thumbnail
+					thumbnail = "sploinko/chapters/chapter4.png"
+					
+					// Background assets
+					background_movie = "media/menu_act03.webm"
+					background_music = "UIPanorama.Music.P2.Menu4"
+					background_image = "sploinko/campaign_bg.png"
+					
+					// Loading screens
+					loading_screen = "sploinko/loading/loadingscreen_sample_ch4.png"
+					transition_screen = "sploinko/loading/loadingscreen_sample_ch4.png"
+				}
+				
+				// Map list
+				maps = [
+					{ name = "sp_a2_core" },
+				]
+			},
+			
+			{
+				// Chapter titles
+				title = "#portal2_Chapter10_Subtitle"
+				save_comment = "#portal2_Chapter10_Title"
+				
+				// Chapter metadata
+				meta = {
+					// Thumbnail
+					thumbnail = "sploinko/chapters/chapter5.png"
+					
+					// Background assets
+					background_movie = "media/menu_act04.webm"
+					background_music = "UIPanorama.Music.P2.Menu5"
+					background_image = "{materials}/vgui/backgrounds/background04_widescreen.vtf"
+					
+					// Loading screen
+					loading_screen = "sploinko/loading/loadingscreen_sample_ch5.png"
+					transition_screen = "sploinko/loading/loadingscreen_sample_ch5.png"
+				}
+				
+				// Map list
+				maps = [
+					{ name = "sp_a5_credits" },
+				]
+			},
+		]
+	}
+	
+	// A second campaign. Uncomment to enable.
+	"CampaignDemo_SampleKV_2" = {
+		// Campaign title
+		title = "Boingo Sploinko's Adventure: Part 2"
+		
+		unlock_all = false
+
+		meta = {
+			// Uses addon's author field if not provided.
+			author = "Copyright-Infringing Blåhaj"
+			
+			// Campaign description
+			desc = ":3c"
+			
+			// ===========
+			// Art assets
+			// ===========
+			
+			// Box art (600x900px)
+			box_art = "sploinko2/boxart.png"
+			
+			// Cover image
+			selector_cover = "sploinko/campaign_cover.png"
+			
+			// Small logo (at least 48x48px large).
+			square_logo = "sploinko2/logo.png"
+			
+			// Full campaign logo, as displayed in the campaign's main menu.
+			full_logo = "sploinko2/full_logo.png"
+			
+			// Background for campaign entry, as displayed in selection UI
+			selector_button_background = "sploinko/campaign_btn_bg.png"
+		}
+
+		chapters = [
+			{
+				title = "#episodic_Chapter1_Title"
+				save_comment = "#episodic_Chapter1_Title"
+				
+				meta = {
+					thumbnail = "p2ce/news_splash.png"
+					background_map = "ep1_background01"
+					background_image = "episodic/backgrounds/01.png"
+				}
+				
+				maps = [
+					{ name="ep1_citadel_00" },
+					{ name="ep1_citadel_01" },
+					{ name="ep1_citadel_02" },
+					{ name="ep1_citadel_02b" },
+				]
+			},
+		]
+	}
+}
