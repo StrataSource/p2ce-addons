@@ -5,11 +5,11 @@
 		meta = {
 			author = "#MainMenu_Campaigns_Valve_Author"
 			desc = "#MainMenu_Campaigns_portal_Description"
-			box_art = "boxart.jpg"
+			box_art = "boxart.png"
 			selector_logo_background = "true"
-			selector_cover = "campaign_cover.jpg"
+			selector_cover = "campaign_cover.png"
 			square_logo = "logo.svg"
-			selector_button_background = "campaign_btn_bg.jpg"
+			selector_button_background = "campaign_btn_bg.png"
 			full_logo = "full_logo.svg"
 		}
 
@@ -19,7 +19,7 @@
 				meta = {
 					thumbnail = "materials/vgui/chapters/chapter1.vtf"
 					background_map = "background1"
-					background_image = "backgrounds/01.jpg"
+					background_image = "backgrounds/01.png"
 				}
 				maps = [
 					{name="testchmb_a_00"},
@@ -31,7 +31,7 @@
 				meta = {
 					thumbnail = "materials/vgui/chapters/chapter2.vtf"
 					background_map = "background1"
-					background_image = "backgrounds/01.jpg"
+					background_image = "backgrounds/01.png"
 				}
 				maps = [
 					{name="testchmb_a_02"},
@@ -43,7 +43,7 @@
 				meta = {
 					thumbnail = "materials/vgui/chapters/chapter3.vtf"
 					background_map = "background1"
-					background_image = "backgrounds/01.jpg"
+					background_image = "backgrounds/01.png"
 				}
 				maps = [
 					{name="testchmb_a_04"},
@@ -55,7 +55,7 @@
 				meta = {
 					thumbnail = "materials/vgui/chapters/chapter4.vtf"
 					background_map = "background1"
-					background_image = "backgrounds/01.jpg"
+					background_image = "backgrounds/01.png"
 				}
 				maps = [
 					{name="testchmb_a_06"},
@@ -67,7 +67,7 @@
 				meta = {
 					thumbnail = "materials/vgui/chapters/chapter5.vtf"
 					background_map = "background1"
-					background_image = "backgrounds/01.jpg"
+					background_image = "backgrounds/01.png"
 				}
 				maps = [
 					{name="testchmb_a_08"},
@@ -78,7 +78,7 @@
 				meta = {
 					thumbnail = "materials/vgui/chapters/chapter6.vtf"
 					background_map = "background1"
-					background_image = "backgrounds/01.jpg"
+					background_image = "backgrounds/01.png"
 				}
 				maps = [
 					{name="testchmb_a_09"},
@@ -89,7 +89,7 @@
 				meta = {
 					thumbnail = "materials/vgui/chapters/chapter7.vtf"
 					background_map = "background1"
-					background_image = "backgrounds/01.jpg"
+					background_image = "backgrounds/01.png"
 				}
 				maps = [
 					{name="testchmb_a_10"},
@@ -100,7 +100,7 @@
 				meta = {
 					thumbnail = "materials/vgui/chapters/chapter8.vtf"
 					background_map = "background1"
-					background_image = "backgrounds/01.jpg"
+					background_image = "backgrounds/01.png"
 				}
 				maps = [
 					{name="testchmb_a_11"},
@@ -111,7 +111,7 @@
 				meta = {
 					thumbnail = "materials/vgui/chapters/chapter9.vtf"
 					background_map = "background1"
-					background_image = "backgrounds/01.jpg"
+					background_image = "backgrounds/01.png"
 				}
 				maps = [
 					{name="testchmb_a_13"},
@@ -122,7 +122,7 @@
 				meta = {
 					thumbnail = "materials/vgui/chapters/chapter10.vtf"
 					background_map = "background1"
-					background_image = "backgrounds/01.jpg"
+					background_image = "backgrounds/01.png"
 				}
 				maps = [
 					{name="testchmb_a_14"},
@@ -133,7 +133,7 @@
 				meta = {
 					thumbnail = "materials/vgui/chapters/chapter11.vtf"
 					background_map = "background1"
-					background_image = "backgrounds/01.jpg"
+					background_image = "backgrounds/01.png"
 				}
 				maps = [
 					{name="testchmb_a_15"},
@@ -147,7 +147,7 @@
 				meta = {
 					thumbnail = "materials/vgui/chapters/chapter12.vtf"
 					background_map = "background2"
-					background_image = "backgrounds/02.jpg"
+					background_image = "backgrounds/02.png"
 				}
 				maps = [
 					{name="background2"},

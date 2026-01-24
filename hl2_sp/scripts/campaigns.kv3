@@ -266,11 +266,11 @@
 		meta = {
 			author = "#MainMenu_Campaigns_Valve_Author"
 			desc = "#MainMenu_Campaigns_episodic_Description"
-			box_art = "episodic/boxart.jpg"
+			box_art = "episodic/boxart.png"
 			selector_cover = "episodic/campaign_cover.png"
 			square_logo = "hl2/logo.svg"
 			loading_square_logo_padding = "10"
-			selector_button_background = "episodic/campaign_btn_bg.jpg"
+			selector_button_background = "episodic/campaign_btn_bg.png"
 			full_logo = "episodic/full_logo.svg"
 		}
 
@@ -355,11 +355,11 @@
 		meta = {
 			author = "#MainMenu_Campaigns_Valve_Author"
 			desc = "#MainMenu_Campaigns_ep2_Description"
-			box_art = "ep2/boxart.jpg"
+			box_art = "ep2/boxart.png"
 			selector_cover = "ep2/campaign_cover.png"
 			square_logo = "ep2/logo_white.svg"
 			loading_square_logo_padding = "10"
-			selector_button_background = "ep2/campaign_btn_bg.jpg"
+			selector_button_background = "ep2/campaign_btn_bg.png"
 			full_logo = "ep2/full_logo.svg"
 		}
 		
