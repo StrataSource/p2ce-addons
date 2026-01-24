@@ -355,11 +355,11 @@
 		meta = {
 			author = "#MainMenu_Campaigns_Valve_Author"
 			desc = "#MainMenu_Campaigns_ep2_Description"
-			box_art = "ep2/boxart.png"
+			box_art = "ep2/boxart.jpg"
 			selector_cover = "ep2/campaign_cover.png"
 			square_logo = "ep2/logo_white.svg"
 			loading_square_logo_padding = "10"
-			selector_button_background = "ep2/campaign_btn_bg.png"
+			selector_button_background = "ep2/campaign_btn_bg.jpg"
 			full_logo = "ep2/full_logo.svg"
 		}
 		
