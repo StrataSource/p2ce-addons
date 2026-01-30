@@ -1,158 +1,161 @@
 {
-	"portal1_sp" = {
-		title = "Portal 1"
+	"campaigns" = {
 
-		meta = {
-			author = "#MainMenu_Campaigns_Valve_Author"
-			desc = "#MainMenu_Campaigns_portal_Description"
-			box_art = "boxart.png"
-			selector_logo_background = "true"
-			selector_cover = "campaign_cover.png"
-			square_logo = "logo.svg"
-			selector_button_background = "campaign_btn_bg.png"
-			full_logo = "full_logo.svg"
+		"portal1_sp" = {
+			title = "Portal 1"
+
+			meta = {
+				author = "#MainMenu_Campaigns_Valve_Author"
+				desc = "#MainMenu_Campaigns_portal_Description"
+				box_art = "boxart.png"
+				selector_logo_background = "true"
+				selector_cover = "campaign_cover.png"
+				square_logo = "logo.svg"
+				selector_button_background = "campaign_btn_bg.png"
+				full_logo = "full_logo.svg"
+			}
+
+			chapters = [
+				{
+					title = "#Portal_Chapter1_Title"
+					meta = {
+						thumbnail = "materials/vgui/chapters/chapter1.vtf"
+						background_map = "background1"
+						background_image = "backgrounds/01.png"
+					}
+					maps = [
+						{name="testchmb_a_00"},
+						{name="testchmb_a_01"},
+					]
+				},
+				{
+					title = "#Portal_Chapter2_Title"
+					meta = {
+						thumbnail = "materials/vgui/chapters/chapter2.vtf"
+						background_map = "background1"
+						background_image = "backgrounds/01.png"
+					}
+					maps = [
+						{name="testchmb_a_02"},
+						{name="testchmb_a_03"}
+					]
+				},
+				{
+					title = "#Portal_Chapter3_Title"
+					meta = {
+						thumbnail = "materials/vgui/chapters/chapter3.vtf"
+						background_map = "background1"
+						background_image = "backgrounds/01.png"
+					}
+					maps = [
+						{name="testchmb_a_04"},
+						{name="testchmb_a_05"},
+					]
+				},
+				{
+					title = "#Portal_Chapter4_Title"
+					meta = {
+						thumbnail = "materials/vgui/chapters/chapter4.vtf"
+						background_map = "background1"
+						background_image = "backgrounds/01.png"
+					}
+					maps = [
+						{name="testchmb_a_06"},
+						{name="testchmb_a_07"},
+					]
+				},
+				{
+					title = "#Portal_Chapter5_Title"
+					meta = {
+						thumbnail = "materials/vgui/chapters/chapter5.vtf"
+						background_map = "background1"
+						background_image = "backgrounds/01.png"
+					}
+					maps = [
+						{name="testchmb_a_08"},
+					]
+				},
+				{
+					title = "#Portal_Chapter6_Title"
+					meta = {
+						thumbnail = "materials/vgui/chapters/chapter6.vtf"
+						background_map = "background1"
+						background_image = "backgrounds/01.png"
+					}
+					maps = [
+						{name="testchmb_a_09"},
+					]
+				},
+				{
+					title = "#Portal_Chapter7_Title"
+					meta = {
+						thumbnail = "materials/vgui/chapters/chapter7.vtf"
+						background_map = "background1"
+						background_image = "backgrounds/01.png"
+					}
+					maps = [
+						{name="testchmb_a_10"},
+					]
+				},
+				{
+					title = "#Portal_Chapter8_Title"
+					meta = {
+						thumbnail = "materials/vgui/chapters/chapter8.vtf"
+						background_map = "background1"
+						background_image = "backgrounds/01.png"
+					}
+					maps = [
+						{name="testchmb_a_11"},
+					]
+				},
+				{
+					title = "#Portal_Chapter9_Title"
+					meta = {
+						thumbnail = "materials/vgui/chapters/chapter9.vtf"
+						background_map = "background1"
+						background_image = "backgrounds/01.png"
+					}
+					maps = [
+						{name="testchmb_a_13"},
+					]
+				},
+				{
+					title = "#Portal_Chapter10_Title"
+					meta = {
+						thumbnail = "materials/vgui/chapters/chapter10.vtf"
+						background_map = "background1"
+						background_image = "backgrounds/01.png"
+					}
+					maps = [
+						{name="testchmb_a_14"},
+					]
+				},
+				{
+					title = "#Portal_Chapter11_Title"
+					meta = {
+						thumbnail = "materials/vgui/chapters/chapter11.vtf"
+						background_map = "background1"
+						background_image = "backgrounds/01.png"
+					}
+					maps = [
+						{name="testchmb_a_15"},
+						{name="escape_00"},
+						{name="escape_01"}, 
+						{name="escape_02"},
+					]
+				},
+				{
+					title = "#Portal_Chapter12_Title"
+					meta = {
+						thumbnail = "materials/vgui/chapters/chapter12.vtf"
+						background_map = "background2"
+						background_image = "backgrounds/02.png"
+					}
+					maps = [
+						{name="background2"},
+					]
+				},
+			]
 		}
-
-		chapters = [
-			{
-				title = "#Portal_Chapter1_Title"
-				meta = {
-					thumbnail = "materials/vgui/chapters/chapter1.vtf"
-					background_map = "background1"
-					background_image = "backgrounds/01.png"
-				}
-				maps = [
-					{name="testchmb_a_00"},
-					{name="testchmb_a_01"},
-				]
-			},
-			{
-				title = "#Portal_Chapter2_Title"
-				meta = {
-					thumbnail = "materials/vgui/chapters/chapter2.vtf"
-					background_map = "background1"
-					background_image = "backgrounds/01.png"
-				}
-				maps = [
-					{name="testchmb_a_02"},
-					{name="testchmb_a_03"}
-				]
-			},
-			{
-				title = "#Portal_Chapter3_Title"
-				meta = {
-					thumbnail = "materials/vgui/chapters/chapter3.vtf"
-					background_map = "background1"
-					background_image = "backgrounds/01.png"
-				}
-				maps = [
-					{name="testchmb_a_04"},
-					{name="testchmb_a_05"},
-				]
-			},
-			{
-				title = "#Portal_Chapter4_Title"
-				meta = {
-					thumbnail = "materials/vgui/chapters/chapter4.vtf"
-					background_map = "background1"
-					background_image = "backgrounds/01.png"
-				}
-				maps = [
-					{name="testchmb_a_06"},
-					{name="testchmb_a_07"},
-				]
-			},
-			{
-				title = "#Portal_Chapter5_Title"
-				meta = {
-					thumbnail = "materials/vgui/chapters/chapter5.vtf"
-					background_map = "background1"
-					background_image = "backgrounds/01.png"
-				}
-				maps = [
-					{name="testchmb_a_08"},
-				]
-			},
-			{
-				title = "#Portal_Chapter6_Title"
-				meta = {
-					thumbnail = "materials/vgui/chapters/chapter6.vtf"
-					background_map = "background1"
-					background_image = "backgrounds/01.png"
-				}
-				maps = [
-					{name="testchmb_a_09"},
-				]
-			},
-			{
-				title = "#Portal_Chapter7_Title"
-				meta = {
-					thumbnail = "materials/vgui/chapters/chapter7.vtf"
-					background_map = "background1"
-					background_image = "backgrounds/01.png"
-				}
-				maps = [
-					{name="testchmb_a_10"},
-				]
-			},
-			{
-				title = "#Portal_Chapter8_Title"
-				meta = {
-					thumbnail = "materials/vgui/chapters/chapter8.vtf"
-					background_map = "background1"
-					background_image = "backgrounds/01.png"
-				}
-				maps = [
-					{name="testchmb_a_11"},
-				]
-			},
-			{
-				title = "#Portal_Chapter9_Title"
-				meta = {
-					thumbnail = "materials/vgui/chapters/chapter9.vtf"
-					background_map = "background1"
-					background_image = "backgrounds/01.png"
-				}
-				maps = [
-					{name="testchmb_a_13"},
-				]
-			},
-			{
-				title = "#Portal_Chapter10_Title"
-				meta = {
-					thumbnail = "materials/vgui/chapters/chapter10.vtf"
-					background_map = "background1"
-					background_image = "backgrounds/01.png"
-				}
-				maps = [
-					{name="testchmb_a_14"},
-				]
-			},
-			{
-				title = "#Portal_Chapter11_Title"
-				meta = {
-					thumbnail = "materials/vgui/chapters/chapter11.vtf"
-					background_map = "background1"
-					background_image = "backgrounds/01.png"
-				}
-				maps = [
-					{name="testchmb_a_15"},
-					{name="escape_00"},
-					{name="escape_01"}, 
-					{name="escape_02"},
-				]
-			},
-			{
-				title = "#Portal_Chapter12_Title"
-				meta = {
-					thumbnail = "materials/vgui/chapters/chapter12.vtf"
-					background_map = "background2"
-					background_image = "backgrounds/02.png"
-				}
-				maps = [
-					{name="background2"},
-				]
-			},
-		]
 	}
 }
