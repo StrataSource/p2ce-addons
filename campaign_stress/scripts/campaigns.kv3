@@ -858,5 +858,71 @@
 				},
 			]
 		}
+		
+		"stress11" = {
+			// Campaign title
+			title = "STRESS 11 DUPE1"
+			
+			// Set this to false to lock all chapters except for chapter 1.
+			unlock_all = true
+
+			// Campaign-specific meta overrides
+			meta = {
+				desc = "Dupe Campaign Dupe1"
+			}
+
+			chapters = [
+				{
+					title = "#episodic_Chapter1_Title"
+					save_comment = "#episodic_Chapter1_Title"
+					
+					meta = {
+						thumbnail = "{campaign_art}/p2ce/news_splash.png"
+						background_map = "ep1_background01"
+						background_image = "{campaign_art}/portal2/chapters/chapter1.png"
+					}
+					
+					maps = [
+						{ name="ep1_citadel_00" },
+						{ name="ep1_citadel_01" },
+						{ name="ep1_citadel_02" },
+						{ name="ep1_citadel_02b" },
+					]
+				},
+			]
+		}
+		
+		"stress11" = {
+			// Campaign title
+			title = "STRESS 11 DUPE2"
+			
+			// Set this to false to lock all chapters except for chapter 1.
+			unlock_all = true
+
+			// Campaign-specific meta overrides
+			meta = {
+				desc = "Dupe Campaign Dupe2"
+			}
+
+			chapters = [
+				{
+					title = "#episodic_Chapter1_Title"
+					save_comment = "#episodic_Chapter1_Title"
+					
+					meta = {
+						thumbnail = "{campaign_art}/p2ce/news_splash.png"
+						background_map = "ep1_background01"
+						background_image = "{campaign_art}/portal2/chapters/chapter1.png"
+					}
+					
+					maps = [
+						{ name="ep1_citadel_00" },
+						{ name="ep1_citadel_01" },
+						{ name="ep1_citadel_02" },
+						{ name="ep1_citadel_02b" },
+					]
+				},
+			]
+		}
 	}
 }
