@@ -911,6 +911,41 @@
 					
 					meta = {
 						thumbnail = "{campaign_art}/p2ce/news_splash.png"
+						background_map = "d1_trainstation_02"
+						background_image = "{campaign_art}/portal2/chapters/chapter1.png"
+					}
+					
+					maps = [
+						{ name="ep1_citadel_00" },
+						{ name="ep1_citadel_01" },
+						{ name="ep1_citadel_02" },
+						{ name="ep1_citadel_02b" },
+					]
+				},
+			]
+		}
+		
+		"stress12" = {
+			// Campaign title
+			title = "STRESS 12"
+			
+			// Set this to false to lock all chapters except for chapter 1.
+			unlock_all = true
+
+			// Campaign-specific meta overrides
+			meta = {
+				desc = "Invalid PNG - Empty PNG that reads fine in external programs, but fails on Pano side"
+				box_art = "STRESS12/boxart.png"
+				selector_cover = "STRESS12/campaign_cover.png"
+			}
+
+			chapters = [
+				{
+					title = "#episodic_Chapter1_Title"
+					save_comment = "#episodic_Chapter1_Title"
+					
+					meta = {
+						thumbnail = "{campaign_art}/p2ce/news_splash.png"
 						background_map = "ep1_background01"
 						background_image = "{campaign_art}/portal2/chapters/chapter1.png"
 					}
