@@ -1,0 +1,213 @@
+{
+	campaigns = {
+		"portal2_sp" = {
+			title = "#MainMenu_Campaigns_portal2"
+			unlock_all = false
+			meta = {
+				author = "#MainMenu_Campaigns_Valve_Author"
+				desc = "#MainMenu_Campaigns_portal2_Description"
+				box_art = "boxart.png"
+				selector_cover = "campaign_cover.png"
+				selector_button_background = "campaign_btn_bg.png"
+				square_logo = "logo.svg"
+				full_logo = "full_logo.svg"
+				chapter_display_mode = "list"
+			}
+			chapters = [
+				{
+					title = "#portal2_Chapter1"
+					save_comment = "#portal2_Chapter1_Title"
+					maps = [
+						{name = "sp_a1_intro1" meta={ title="Container Ride" }},
+						{name = "sp_a1_intro2" meta={ title="Portal Carousel" }},
+						{name = "sp_a1_intro3" meta={ title="Portal Gun" }},
+						{name = "sp_a1_intro4" meta={ title="Smooth Jazz" }},
+						{name = "sp_a1_intro5" meta={ title="Cube Momentum" }},
+						{name = "sp_a1_intro6" meta={ title="Future Starter" }},
+						{name = "sp_a1_intro7" meta={ title="Secret Panel" }},
+						{name = "sp_a1_wakeup" meta={ title="Her Chamber" }},
+						{name = "sp_a2_intro" meta={ title="Incinerator" }}
+					]
+					meta = {
+						thumbnail = "chapters/chapter1.png"
+						background_movie = "menu_act01.webm"
+						background_music = "UIPanorama.Music.P2.Menu1"
+						loading_screen = "loading_screens/a1.png"
+						transition_screen = "loading_screens/transit_a.png"
+					}
+				},
+				{
+					title = "#portal2_Chapter2"
+					save_comment = "#portal2_Chapter2_Title"
+					maps = [
+						{name = "sp_a2_laser_intro" meta={ title="Laser Intro" }},
+						{name = "sp_a2_laser_stairs" meta={ title="Laser Stairs" }},
+						{name = "sp_a2_dual_lasers" meta={ title="Dual Lasers" }},
+						{name = "sp_a2_laser_over_goo" meta={ title="Laser Over Goo" }},
+						{name = "sp_a2_catapult_intro" meta={ title="Catapult Intro" }},
+						{name = "sp_a2_trust_fling" meta={ title="Trust Fling" }},
+						{name = "sp_a2_pit_flings" meta={ title="Pit Flings" }},
+						{name = "sp_a2_fizzler_intro" meta={ title="Fizzler Intro" }}
+					]
+					meta = {
+						thumbnail = "chapters/chapter2.png"
+						background_movie = "menu_act02.webm"
+						background_music = "UIPanorama.Music.P2.Menu2"
+						loading_screen = "loading_screens/a2.png"
+						transition_screen = "loading_screens/transit_b.png"
+					}
+				},
+				{
+					title = "#portal2_Chapter3"
+					save_comment = "#portal2_Chapter3_Title"
+					maps = [
+						{name = "sp_a2_sphere_peek" meta={ title="Ceiling Catapult" }},
+						{name = "sp_a2_ricochet" meta={ title="Ricochet" }},
+						{name = "sp_a2_bridge_intro" meta={ title="Bridge Intro" }},
+						{name = "sp_a2_bridge_the_gap" meta={ title="Bridge the Gap" }},
+						{name = "sp_a2_turret_intro" meta={ title="Turret Intro" }},
+						{name = "sp_a2_laser_relays" meta={ title="Laser Relays" }},
+						{name = "sp_a2_turret_blocker" meta={ title="Turret Blocker" }},
+						{name = "sp_a2_laser_vs_turret" meta={ title="Laser vs. Turret" }},
+						{name = "sp_a2_pull_the_rug" meta={ title="Pull the Rug" }}
+					]
+					meta = {
+						thumbnail = "chapters/chapter3.png"
+						background_movie = "menu_act02.webm"
+						background_music = "UIPanorama.Music.P2.Menu2"
+						loading_screen = "loading_screens/a2.png"
+						transition_screen = "loading_screens/transit_b.png"
+					}
+				},
+				{
+					title = "#portal2_Chapter4"
+					save_comment = "#portal2_Chapter4_Title"
+					maps = [
+						{name = "sp_a2_column_blocker" meta={ title="Column Blocker" }},
+						{name = "sp_a2_laser_chaining" meta={ title="Laser Chaining" }},
+						{name = "sp_a2_triple_laser" meta={ title="Triple Laser" }},
+						{name = "sp_a2_bts1" meta={ title="Jailbreak" }},
+						{name = "sp_a2_bts2" meta={ title="Escape" }}
+					]
+					meta = {
+						thumbnail = "chapters/chapter4.png"
+						background_movie = "menu_act02.webm"
+						background_music = "UIPanorama.Music.P2.Menu2"
+						loading_screen = "loading_screens/a2.png"
+						transition_screen = "loading_screens/transit_b.png"
+					}
+				},
+				{
+					title = "#portal2_Chapter5"
+					save_comment = "#portal2_Chapter5_Title"
+					maps = [
+						{name = "sp_a2_bts3" meta={ title="Turret Factory" }},
+						{name = "sp_a2_bts4" meta={ title="Turret Sabotage" }},
+						{name = "sp_a2_bts5" meta={ title="Neurotoxin Sabotage" }},
+						{name = "sp_a2_bts6" meta={ title="Tube Ride" }},
+						{name = "sp_a2_core" meta={ title="Core Transfer" }}
+					]
+					meta = {
+						thumbnail = "chapters/chapter5.png"
+						background_movie = "menu_act02.webm"
+						background_music = "UIPanorama.Music.P2.Menu2"
+						loading_screen = "loading_screens/a2.png"
+						transition_screen = "loading_screens/transit_b.png"
+					}
+				},
+				{
+					title = "#portal2_Chapter6"
+					save_comment = "#portal2_Chapter6_Title"
+					maps = [
+						{name = "sp_a3_00" meta={ title="The Fall" }},
+						{name = "sp_a3_01" meta={ title="Underground Exposition, Part 1" }},
+						{name = "sp_a3_03" meta={ title="Underground Exposition, Part 2" }},
+						{name = "sp_a3_jump_intro" meta={ title="Repulsion Gel Intro" }},
+						{name = "sp_a3_bomb_flings" meta={ title="Bomb Flings" }},
+						{name = "sp_a3_crazy_box" meta={ title="Crazy Box" }},
+						{name = "sp_a3_transition01" meta={ title="Reunion" }}
+					]
+					meta = {
+						thumbnail = "chapters/chapter6.png"
+						background_movie = "menu_act03.webm"
+						background_music = "UIPanorama.Music.P2.Menu3"
+						loading_screen = "loading_screens/a3.png"
+						transition_screen = "loading_screens/transit_c.png"
+					}
+				},
+				{
+					title = "#portal2_Chapter7"
+					save_comment = "#portal2_Chapter7_Title"
+					maps = [
+						{name = "sp_a3_speed_ramp" meta={ title="Propulsion Gel Intro" }},
+						{name = "sp_a3_speed_flings" meta={ title="Speed Flings" }},
+						{name = "sp_a3_portal_intro" meta={ title="Conversion Gel Intro" }},
+						{name = "sp_a3_end" meta={ title="Three Gels" }}
+					]
+					meta = {
+						thumbnail = "chapters/chapter7.png"
+						background_movie = "menu_act03.webm"
+						background_music = "UIPanorama.Music.P2.Menu3"
+						loading_screen = "loading_screens/a3.png"
+						transition_screen = "loading_screens/transit_c.png"
+					}
+				},
+				{
+					title = "#portal2_Chapter8"
+					save_comment = "#portal2_Chapter8_Title"
+					maps = [
+						{name = "sp_a4_intro" meta={ title="TEST" }},
+						{name = "sp_a4_tb_intro" meta={ title="Excursion Funnel Intro" }},
+						{name = "sp_a4_tb_trust_drop" meta={ title="Trust Drop" }},
+						{name = "sp_a4_tb_wall_button" meta={ title="Wall Button" }},
+						{name = "sp_a4_tb_polarity" meta={ title="Polarity" }},
+						{name = "sp_a4_tb_catch" meta={ title="Funnel Catch" }},
+						{name = "sp_a4_stop_the_box" meta={ title="Stop the Box" }},
+						{name = "sp_a4_laser_catapult" meta={ title="Laser Catapult" }},
+						{name = "sp_a4_laser_platform" meta={ title="Laser Platform" }},
+						{name = "sp_a4_speed_tb_catch" meta={ title="Propulsion Catch" }},
+						{name = "sp_a4_jump_polarity" meta={ title="Repulsion Polarity" }}
+					]
+					meta = {
+						thumbnail = "chapters/chapter8.png"
+						background_movie = "menu_act04.webm"
+						background_music = "UIPanorama.Music.P2.Menu4"
+						loading_screen = "loading_screens/a4.png"
+						transition_screen = "loading_screens/transit_e.png"
+					}
+				},
+				{
+					title = "#portal2_Chapter9"
+					save_comment = "#portal2_Chapter9_Title"
+					maps = [
+						{name = "sp_a4_finale1" meta={ title="The Part Where He Kills You" }},
+						{name = "sp_a4_finale2" meta={ title="Crush" }},
+						{name = "sp_a4_finale3" meta={ title="Bomb Intro" }},
+						{name = "sp_a4_finale4" meta={ title="The Part Where You Kill Him" }}
+					]
+					meta = {
+						thumbnail = "chapters/chapter9.png"
+						background_movie = "menu_act04.webm"
+						background_music = "UIPanorama.Music.P2.Menu4"
+						loading_screen = "loading_screens/a4.png"
+						transition_screen = "loading_screens/transit_e.png"
+					}
+				},
+				{
+					title = "#portal2_Chapter10"
+					save_comment = "#portal2_Chapter10_Title"
+					maps = [
+						{name = "sp_a5_credits" meta={ title="#portal2_Chapter10_Title" }}
+					]
+					meta = {
+						thumbnail = "chapters/chapter10.png"
+						background_movie = "menu_act05.webm"
+						background_music = "UIPanorama.Music.P2.Menu5"
+						loading_screen = "loading_screens/a5.png"
+						transition_screen = "loading_screens/transit_e.png"
+					}
+				}
+			]
+		}
+	}
+}

@@ -1,4 +1,7 @@
 {
+	meta = {
+		chapter_display_mode = "classic"
+	}
 	"campaigns" = {
 		"hl2" = {
 			title = "#MainMenu_Campaigns_hl2"
