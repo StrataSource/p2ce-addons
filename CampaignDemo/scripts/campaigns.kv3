@@ -1,7 +1,7 @@
 {
 	// campaigns.kv3 is a file used to define your custom campaigns.
 	// Each campaign has a subset of metadata that all dictate your story, how your chapters are ordered and unlocked, and what art assets are used.
-	// Campaign saves are stored separately by P2:CE's save management system and will not conflict with other campaigns (e.g.: the Portal 2 base game, Half-Life 2, et cetera.).
+	// Campaign saves are stored separately by P2:CE's save management system and will not conflict with other campaigns (e.g.: the Portal 2 base game, Half-Life 2, et cetera).
 	// 
 	// You can specify multiple campaigns in this file, stored in your add-on's scripts directory.
 	// See the Half-Life 2 campaigns.kv3 file for an example.
@@ -17,8 +17,8 @@
 	//		- A cover image
 	//		- A full logo
 	//
-	// Box art/capsules must be SPECIFICALLY sized at 600x900 (2:3 aspect ratio), conforming with the Steamworks library
-	// asset guidelines located at the following URL: https://partner.steamgames.com/doc/store/assets/libraryassets
+	// Box art and cover images must be SPECIFICALLY be sized at 600x900 (2:3 aspect ratio) and 920x430 RESPECTIVELY, conforming with the Steamworks
+	// library asset guidelines located at the following URL: https://partner.steamgames.com/doc/store/assets/libraryassets
 	//
 	// Panorama supports loading JPEG, PNG and SVG graphics resources for campaign art assets. The campaign system will
 	// attempt to pull relevant resources from the .assets directory located at the root of your addon.
@@ -114,10 +114,16 @@
 					
 					// This is the list of maps associated with the chapter. Map-specific overrides (like the one specified in SDK_VEHICLES) can influence how the UI appears to the player.
 					maps = [
-						{ name = "sdk_template_mechanics" },
 						{
-							name = "sdk_vehicles"
+							name = "sdk_template_mechanics_cm"
 							meta = {
+								name = "P2:CE SDK Mod Template - Mechanics Sample"
+							}
+						},
+						{
+							name = "sdk_vehicles_cm"
+							meta = {
+								name = "P2:CE SDK Mod Template - SDK Vehicles"
 								transition_screen = "vgui/loading_screens/loadingscreen_sample_ch1_alt"
 							}
 						},
@@ -137,7 +143,7 @@
 						// Background assets
 						background_movie = "media/menu_act02.webm"
 						background_music = "UIPanorama.Music.P2.Menu2"
-						background_image = "{materials}/vgui/backgrounds/background02_widescreen.vtf"
+						background_image = "sploinko/campaign_bg.png"
 						
 						// Loading screens
 						loading_screen = "sploinko/loading/loadingscreen_sample_ch2.png"
@@ -146,7 +152,12 @@
 					
 					// Map list
 					maps = [
-						{ name = "d2_coast_01" },
+						{
+							name = "sdk_template_mechanics_2_cm"
+							meta = {
+								name = "P2:CE SDK Mod Template - elpmaS scinahceM"
+							}
+						},
 					]
 				},
 				
@@ -163,7 +174,7 @@
 						// Background assets
 						background_map = "background02"
 						background_music = "UIPanorama.Music.P2.Menu3"
-						background_image = "{materials}/console/background02_widescreen.vtf"
+						background_image = "sploinko/campaign_bg.png"
 
 						// Loading screens
 						loading_screen = "sploinko/loading/loadingscreen_sample_ch3.png"
@@ -178,31 +189,6 @@
 				
 				{
 					// Chapter titles
-					title = "We Do Go To Blibbletown..."
-					save_comment = "Blibbletown Save Comment"
-					
-					meta = {
-						// Thumbnail
-						thumbnail = "sploinko/chapters/chapter4.png"
-						
-						// Background assets
-						background_movie = "media/menu_act03.webm"
-						background_music = "UIPanorama.Music.P2.Menu4"
-						background_image = "sploinko/campaign_bg.png"
-						
-						// Loading screens
-						loading_screen = "sploinko/loading/loadingscreen_sample_ch4.png"
-						transition_screen = "sploinko/loading/loadingscreen_sample_ch4.png"
-					}
-					
-					// Map list
-					maps = [
-						{ name = "sp_a2_core" },
-					]
-				},
-				
-				{
-					// Chapter titles
 					title = "#portal2_Chapter10_Subtitle"
 					save_comment = "#portal2_Chapter10_Title"
 					
@@ -212,9 +198,8 @@
 						thumbnail = "sploinko/chapters/chapter5.png"
 						
 						// Background assets
-						background_movie = "media/menu_act04.webm"
 						background_music = "UIPanorama.Music.P2.Menu5"
-						background_image = "{materials}/vgui/backgrounds/background04_widescreen.vtf"
+						background_image = "sploinko/campaign_bg.png"
 						
 						// Loading screen
 						loading_screen = "sploinko/loading/loadingscreen_sample_ch5.png"
