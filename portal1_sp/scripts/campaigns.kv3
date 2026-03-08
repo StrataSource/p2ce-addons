@@ -19,7 +19,7 @@
 				{
 					title = "#Portal_Chapter1_Title"
 					meta = {
-						thumbnail = "materials/vgui/chapters/chapter1.vtf"
+						thumbnail = "chapters/chapter1.png"
 						background_map = "background1"
 						background_image = "backgrounds/01.png"
 					}
@@ -31,7 +31,7 @@
 				{
 					title = "#Portal_Chapter2_Title"
 					meta = {
-						thumbnail = "materials/vgui/chapters/chapter2.vtf"
+						thumbnail = "chapters/chapter2.png"
 						background_map = "background1"
 						background_image = "backgrounds/01.png"
 					}
@@ -43,7 +43,7 @@
 				{
 					title = "#Portal_Chapter3_Title"
 					meta = {
-						thumbnail = "materials/vgui/chapters/chapter3.vtf"
+						thumbnail = "chapters/chapter3.png"
 						background_map = "background1"
 						background_image = "backgrounds/01.png"
 					}
@@ -55,7 +55,7 @@
 				{
 					title = "#Portal_Chapter4_Title"
 					meta = {
-						thumbnail = "materials/vgui/chapters/chapter4.vtf"
+						thumbnail = "chapters/chapter4.png"
 						background_map = "background1"
 						background_image = "backgrounds/01.png"
 					}
@@ -67,7 +67,7 @@
 				{
 					title = "#Portal_Chapter5_Title"
 					meta = {
-						thumbnail = "materials/vgui/chapters/chapter5.vtf"
+						thumbnail = "chapters/chapter5.png"
 						background_map = "background1"
 						background_image = "backgrounds/01.png"
 					}
@@ -78,7 +78,7 @@
 				{
 					title = "#Portal_Chapter6_Title"
 					meta = {
-						thumbnail = "materials/vgui/chapters/chapter6.vtf"
+						thumbnail = "chapters/chapter6.png"
 						background_map = "background1"
 						background_image = "backgrounds/01.png"
 					}
@@ -89,7 +89,7 @@
 				{
 					title = "#Portal_Chapter7_Title"
 					meta = {
-						thumbnail = "materials/vgui/chapters/chapter7.vtf"
+						thumbnail = "chapters/chapter7.png"
 						background_map = "background1"
 						background_image = "backgrounds/01.png"
 					}
@@ -100,7 +100,7 @@
 				{
 					title = "#Portal_Chapter8_Title"
 					meta = {
-						thumbnail = "materials/vgui/chapters/chapter8.vtf"
+						thumbnail = "chapters/chapter8.png"
 						background_map = "background1"
 						background_image = "backgrounds/01.png"
 					}
@@ -111,7 +111,7 @@
 				{
 					title = "#Portal_Chapter9_Title"
 					meta = {
-						thumbnail = "materials/vgui/chapters/chapter9.vtf"
+						thumbnail = "chapters/chapter9.png"
 						background_map = "background1"
 						background_image = "backgrounds/01.png"
 					}
@@ -122,7 +122,7 @@
 				{
 					title = "#Portal_Chapter10_Title"
 					meta = {
-						thumbnail = "materials/vgui/chapters/chapter10.vtf"
+						thumbnail = "chapters/chapter10.png"
 						background_map = "background1"
 						background_image = "backgrounds/01.png"
 					}
@@ -133,7 +133,7 @@
 				{
 					title = "#Portal_Chapter11_Title"
 					meta = {
-						thumbnail = "materials/vgui/chapters/chapter11.vtf"
+						thumbnail = "chapters/chapter11.png"
 						background_map = "background1"
 						background_image = "backgrounds/01.png"
 					}
@@ -147,7 +147,7 @@
 				{
 					title = "#Portal_Chapter12_Title"
 					meta = {
-						thumbnail = "materials/vgui/chapters/chapter12.vtf"
+						thumbnail = "chapters/chapter12.png"
 						background_map = "background2"
 						background_image = "backgrounds/02.png"
 					}
