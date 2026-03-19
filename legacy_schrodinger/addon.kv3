@@ -7,8 +7,7 @@
 	thumbnail = ".assets/thumb.jpg"
 	authors =
 	[ 
-		"P2:CE Team"
-		"Lenship2"
+		"P2:CE Team, Lenship2"
 	]
 	dependencies = [  ]
 	tags = 
