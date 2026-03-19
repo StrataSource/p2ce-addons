@@ -6,6 +6,15 @@ from PIL import Image
 from sourcepp import vpkpp
 
 
+# Excluded from packing
+PATH_PACK_FILTER = (
+    "/.assets/",
+    "/media/",
+    "/addon.kv3",
+    "/scripts/campaigns.kv3",
+)
+
+
 def add_overlay_to_image(base_path: str, overlay_path: str, out_path: str) -> None:
     base = Image.open(base_path).convert("RGBA")
     overlay = Image.open(overlay_path).convert("RGBA")
@@ -14,33 +23,41 @@ def add_overlay_to_image(base_path: str, overlay_path: str, out_path: str) -> No
     base.convert("RGB").save(out_path)
 
 
+def create_pack_list(addon_dir: str, partial_dir: str, to_pack: list[str], to_copy: list[str]):
+    path = addon_dir + partial_dir
+    for content_entry_name in os.listdir(path):
+        content_entry_path = os.path.join(path, content_entry_name)
+        content_partial_path = partial_dir + "/" + content_entry_name
+        if os.path.isdir(content_entry_path):
+            create_pack_list(addon_dir, content_partial_path , to_pack, to_copy)
+        else:
+            if content_partial_path.startswith(PATH_PACK_FILTER):
+                to_copy.append(content_partial_path)
+                continue
+            to_pack.append(content_partial_path)
+
+
 def build_addon(addon_dir: str, output_dir_parent: str) -> None:
     output_dir = os.path.join(output_dir_parent, "p2ce_" + os.path.basename(addon_dir))
     os.makedirs(output_dir, exist_ok=True)
-    print(f"Building addon {os.path.basename(addon_dir)} to {os.path.relpath(output_dir, os.getcwd())}")
+    print(f"\nBuilding addon {os.path.basename(addon_dir)} to {os.path.relpath(output_dir, os.getcwd())}")
 
     to_pack: list[str] = []
-    for content_entry_name in os.listdir(addon_dir):
-        content_entry_path = os.path.join(addon_dir, content_entry_name)
-        if content_entry_name.startswith('.') or content_entry_name == "addon.kv3" or content_entry_name == "media":
-            # We can't pack media yet. Remove that check when this is no longer the case
-            print(f"Copying {content_entry_name}")
-            if os.path.isdir(content_entry_path):
-                shutil.copytree(content_entry_path, os.path.join(output_dir, content_entry_name), dirs_exist_ok=True)
-            else:
-                shutil.copy(content_entry_path, output_dir)
-            continue
+    to_copy: list[str] = []
 
-        print(f"Packing {content_entry_name}")
-        to_pack.append(content_entry_path)
+    create_pack_list(addon_dir, "", to_pack, to_copy)
+
+    for entry in to_copy:
+        print(f"Copying \"{entry}\"")
+        dirname = os.path.dirname(entry)
+        os.makedirs(output_dir + dirname, exist_ok=True)
+        shutil.copy(addon_dir + entry, output_dir + entry)
 
     if len(to_pack) > 0:
         vpk = vpkpp.VPK.create(os.path.join(output_dir, "pak01_dir.vpk"))
         for entry in to_pack:
-            if os.path.isdir(entry):
-                vpk.add_directory(os.path.basename(entry), entry)
-            elif os.path.isfile(entry):
-                vpk.add_entry_from_file(os.path.basename(entry), entry)
+            print(f"Packing \"{entry}\"")
+            vpk.add_entry_from_file(entry, addon_dir + entry)
         vpk.bake()
 
     if (
