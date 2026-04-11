@@ -22,7 +22,7 @@ Proxies
 	PaintOverlayColor
 		{
 		resultVar "$detailtint"
-		paintPower 5
+		paintPower 3
 		}
 	}
 }

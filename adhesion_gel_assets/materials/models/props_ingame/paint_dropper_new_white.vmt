@@ -16,7 +16,7 @@ Proxies
 	PaintOverlayColor
 		{
 		resultVar "$p_paintpower"
-		paintPower 1
+		paintPower 3
 		}
 	Equals
 		{
