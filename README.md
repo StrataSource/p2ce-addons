@@ -9,7 +9,8 @@ Any content modified from Valve-authored assets is owned by Valve and not under 
 ## How to Submit a Local Addon:
 In order to submit a local addon, please make a Pull Request to this repo containing all necessary files required for your addon to function correctly. Make sure to follow the layout set out by other addons contained within this repository.
 
-If you need assistance, let one of us know in the P2:CE Discord server!
+If you need assistance, let one of us know in the P2:CE Discord server! :
+https://discord.gg/ABuaNxpuV
 
 -----
 
