@@ -2,7 +2,7 @@
 {
 	mod = "Dynamic Light Bridge Lights (★)"
 	description = "Adds dynamic lighting to light bridges, similar in style to our Clustered Renderer showcase video.\n\nWARNING: This addon can be very performance-heavy on lower-end hardware due to the number of lights it creates.\n\nThis addon is a stand-in solution until Area Lights have been implemented.\n\nVersion 1.1.0"
-	type = ""
+	type = "Other"
 	id = 0
 	thumbnail = ".assets/thumb.jpg"
 	authors =

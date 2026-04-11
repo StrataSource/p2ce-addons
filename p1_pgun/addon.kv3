@@ -2,7 +2,7 @@
 {
 	mod = "P1 Portal Gun (★)"
 	description = "Replaces the portal gun with the variant from Portal 1.\n\nIncludes particle replacements provided by Electrodynamite12.\nAlso includes sound replacements for prop pickup, +use, firing, and portals.\n\nVersion 2.0.1"
-	type = ""
+	type = "Other"
 	id = 0
 	thumbnail = ".assets/thumb.jpg"
 	authors =
