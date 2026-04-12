@@ -10,7 +10,7 @@ Proxies
 	PaintOverlayColor
 		{
 		resultVar "$color"
-		paintPower 5
+		paintPower 2
 		}
 	}
 
