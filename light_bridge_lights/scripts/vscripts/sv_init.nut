@@ -29,6 +29,8 @@ LBL_bridgeLightCountPrevious <- {}
 LBL_bridgesCacheMarkedForReset <- false
 const LBL_CACHE_REFRESH_TIME = 0.01
 
+LBL_lightsCanSpawn <- true
+
 // traces used for calculating bridge length
 const LBL_TRACE_DISTANCE = 8192
 LBL_TRACE_MASK <- MASK_SOLID | MASK_WATER | MASK_BLOCKLOS
@@ -49,6 +51,20 @@ function LBL_Setup() {
     loopTimer.ConnectOutput("OnTimer", "LBL_bridgeCacheRefresh")
     LBL_bridgeCacheRefresh()  // initial cache
 
+    // create relays for enabling/disabling lights for use by maps who want to force turn off lights
+    LBL_Dev.msgDeveloper("Creating force disable relay...")
+    local disableRelay = CreateEntityByName("logic_relay", {
+        targetname = "lightbridgelights_forcedisable"
+    })
+    disableRelay.ConnectOutput("OnTrigger", "LBL_Disable")
+
+    LBL_Dev.msgDeveloper("Creating force enable relay...")
+    local enableRelay = CreateEntityByName("logic_relay", {
+        targetname = "lightbridgelights_forceenable"
+    })
+    enableRelay.ConnectOutput("OnTrigger", "LBL_Enable")
+
+
     local loadAuto = CreateEntityByName("logic_auto", {}) // handle loading of saves
     loadAuto.ConnectOutput("OnLoadGame", "LBL_OnLoadGame")
 
@@ -66,6 +82,8 @@ function LBL_OnLoadGame() {
 }
 
 function LBL_bridgeCacheRefresh() {
+    if(!LBL_lightsCanSpawn) return
+
     if(LBL_bridgesCacheMarkedForReset) {
         LBL_bridgeCacheReset()
         LBL_bridgesCacheMarkedForReset = false
@@ -218,6 +236,20 @@ function LBL_lightRemoveAll() {
     }
 
     LBL_bridgeCacheReset()
+}
+
+function LBL_Enable() {
+    LBL_Dev.msgDeveloper("Enabling spawning lights...")
+
+    LBL_lightsCanSpawn = true
+    LBL_bridgeCacheRefresh()   // immediately refresh cache to spawn lights on all existing bridges
+}
+
+function LBL_Disable() {
+    LBL_Dev.msgDeveloper("Disabling spawning lights...")
+
+    LBL_lightsCanSpawn = false
+    LBL_lightRemoveAll()   // immediately remove all lights
 }
 
 LBL_auto <- CreateEntityByName("logic_auto", {spawnflags = 1})
