@@ -9,7 +9,7 @@ $envmap "paint/paint_envmap_hdr"
 $envmaptint "[0.05 0.05 0.05]"
 $normalmapalphaenvmapmask 1
 $detail "paint/prop_paint_white"
-$detailtint "{0 165 255}"
+$detailtint "{0 255 0}"
 $detailScale 1
 $detailblendmode 2
 $phong 1
