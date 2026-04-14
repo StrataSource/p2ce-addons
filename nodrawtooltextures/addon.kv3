@@ -1,0 +1,25 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	mod = "%nodraw tool textures (★)"
+	description = "This is an addon for hammer that allows the nodraw button to hide nearly every base tool texture in the 3d viewport, cleaning up what can otherwise be a lot of visual clutter.\n\nVersion 1.0.0"
+	type = "Other"
+	id = 3705772457
+	thumbnail = ".assets/thumb.jpg"
+	authors = 
+	[ 
+		"Lenship2"
+	]
+	dependencies = [  ]
+	tags = 
+	[
+		"Materials/Textures",
+	]
+	ignore = [  ]
+	metadata = 
+	{
+	}
+	assets = 
+	{
+	}
+	mounted_by_default = true
+}
