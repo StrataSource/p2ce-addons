@@ -21,6 +21,7 @@ const LBL_LIGHT_VOLUMETRIC_DENSITY = 0.025
 
 const LBL_LIGHT_SPACING = 24  // distance between lights in units, less spacing means more lights but a higher performance cost
 const LBL_LIGHT_MAXCOUNT = 128  // maximum number of lights per bridge to prevent performance issues
+const LBL_MAX_NUMBER_OF_LIT_BRIDGES = 4 // max number of bridges that can have lights at once, having too many could cause a crash depending on the length of the bridges (due to the increased number of lights)
 
 const LBL_LIGHT_SPECIFIC_HEALTH = 27852 // used to identify lights created by this script
 
@@ -99,7 +100,7 @@ function LBL_bridgeCacheRefresh() {
         if(!bridge.IsValid()) { 
             LBL_lightRemoveAtBridge(bridgeIndex)
             LBL_bridgesCacheMarkedForReset = true   // wait until next tick to prevent crashes
-            break
+            return
         }
 
         local lightCountNew = LBL_bridgeGetLightCount(bridge)
@@ -116,7 +117,7 @@ function LBL_bridgeCacheRefresh() {
     }
 
     for(local bridge = null; bridge = Entities.FindByClassname(bridge, "projected_wall_entity");) {
-        if(LBL_bridgeIsCached(bridge) || !bridge.IsValid()) continue   // skip cached bridges or invalid bridges
+        if(LBL_bridgeIsCached(bridge) || !bridge.IsValid() || LBL_Dev.numOfItemsInTable(LBL_bridgesCached) >= LBL_MAX_NUMBER_OF_LIT_BRIDGES) continue   // skip cached bridges or invalid bridges, and prevent too many lit bridges to prevent crashes
 
         // update cache with new bridge
 
