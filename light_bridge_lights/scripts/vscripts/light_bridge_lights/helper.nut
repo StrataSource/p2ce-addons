@@ -17,5 +17,11 @@ if(!("LBL_Dev" in getroottable())) {
         function distance(vec1, vec2) {
             return (vec1 - vec2).Length()
         }
+
+        function numOfItemsInTable(table) {
+            local count = 0
+            foreach(item in table) count++
+            return count
+        }
     }
 }
