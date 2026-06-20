@@ -117,7 +117,7 @@ function LBL_bridgeCacheRefresh() {
     }
 
     for(local bridge = null; bridge = Entities.FindByClassname(bridge, "projected_wall_entity");) {
-        if(LBL_bridgeIsCached(bridge) || !bridge.IsValid() || LBL_Dev.numOfItemsInTable(LBL_bridgesCached) >= LBL_MAX_NUMBER_OF_LIT_BRIDGES) continue   // skip cached bridges or invalid bridges, and prevent too many lit bridges to prevent crashes
+        if(LBL_bridgeIsCached(bridge) || !bridge.IsValid() || LBL_bridgesCached.len() >= LBL_MAX_NUMBER_OF_LIT_BRIDGES) continue   // skip cached bridges or invalid bridges, and prevent too many lit bridges to prevent crashes
 
         // update cache with new bridge
 
