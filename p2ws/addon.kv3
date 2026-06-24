@@ -1,0 +1,20 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	mod = "Portal 2: Perpetual Testing Initiative"
+	description = "Local addon to play your P2 Workshop subscriptions right from P2:CE!"
+	type = "campaign"
+	thumbnail = ".assets/thumb.png"
+	authors = [ "Valve Software & Workshop Contributors" ]
+	dependencies = [  ]
+	tags = 
+	[
+		"Singleplayer"
+	]
+	ignore = [  ]
+	metadata = 
+	{
+	}
+	assets = 
+	{
+	}
+}
