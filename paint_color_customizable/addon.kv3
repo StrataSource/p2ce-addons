@@ -1,0 +1,22 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	mod = "Paints Splat/Bomb Color Customizable"
+	description = ""
+	type = "Other"
+	id = 3753354175
+	thumbnail = ".assets/thumb.jpg"
+	authors = [  ]
+	dependencies = [  ]
+	tags = 
+	[
+		"Materials/Textures",
+	]
+	ignore = [  ]
+	metadata = 
+	{
+	}
+	assets = 
+	{
+	}
+	mounted_by_default = true
+}
