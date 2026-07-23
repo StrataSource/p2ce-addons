@@ -45,11 +45,9 @@ function LBL_Setup() {
         return
     }
 
-    LBL_Dev.msgDeveloper("Creating cache refresh timer...")
-    local loopTimer = CreateEntityByName("logic_timer", {  // cache refresh timer
-        RefireTime = LBL_CACHE_REFRESH_TIME
-    })
-    loopTimer.ConnectOutput("OnTimer", "LBL_bridgeCacheRefresh")
+    LBL_Dev.msgDeveloper("Creating cache refresh think entity...")
+    local loopTimerThinker = Entities.CreateByClassname("info_target")  // dummy entity to run the think function
+    loopTimerThinker.SetScriptThinkFunction("LBL_Think")
     LBL_bridgeCacheRefresh()  // initial cache
 
     // create relays for enabling/disabling lights for use by maps who want to force turn off lights
@@ -72,6 +70,11 @@ function LBL_Setup() {
     local hasBeenSetupEntity = CreateEntityByName("info_target", { // dummy entity to check against to prevent multiple setups
         targetname = "lightbridgelights_setupdone"
     })
+}
+
+function LBL_Think() {
+    LBL_bridgeCacheRefresh()
+    return LBL_CACHE_REFRESH_TIME
 }
 
 function LBL_OnLoadGame() {
