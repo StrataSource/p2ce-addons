@@ -45,11 +45,6 @@ function LBL_Setup() {
         return
     }
 
-    LBL_Dev.msgDeveloper("Creating cache refresh think entity...")
-    local loopTimerThinker = Entities.CreateByClassname("info_target")  // dummy entity to run the think function
-    loopTimerThinker.SetScriptThinkFunction("LBL_Think")
-    LBL_bridgeCacheRefresh()  // initial cache
-
     // create relays for enabling/disabling lights for use by maps who want to force turn off lights
     LBL_Dev.msgDeveloper("Creating force disable relay...")
     local disableRelay = CreateEntityByName("logic_relay", {
@@ -63,13 +58,14 @@ function LBL_Setup() {
     })
     enableRelay.ConnectOutput("OnTrigger", "LBL_Enable")
 
-
-    local loadAuto = CreateEntityByName("logic_auto", {}) // handle loading of saves
+    local loadAuto = CreateEntityByName("logic_auto", {targetname = "lightbridgelights_loadauto"}) // handle loading of saves
     loadAuto.ConnectOutput("OnLoadGame", "LBL_OnLoadGame")
 
     local hasBeenSetupEntity = CreateEntityByName("info_target", { // dummy entity to check against to prevent multiple setups
         targetname = "lightbridgelights_setupdone"
     })
+    hasBeenSetupEntity.SetScriptThinkFunction("LBL_Think")  // attach think function to this entity
+    LBL_bridgeCacheRefresh()  // initial cache
 }
 
 function LBL_Think() {
@@ -188,7 +184,7 @@ function LBL_lightSpawnAtBridge(bridge, currentLightCount = 0) {
         local light = LBL_lightCreate(bridge.GetOrigin() + (bridge.GetForwardVector() * distance))
 
         light.SetParent(bridge)
-        light.__KeyValueFromString("targetname", bridgeIndex + "_light" + i)
+        light.__KeyValueFromString("targetname", bridgeIndex + "_lightbridgelights_light" + i)
     }
 }
 
@@ -225,7 +221,7 @@ function LBL_lightRemoveAtBridge(bridgeIndex, numLightsToKeep = 0) {
     local numLightsPotential = (LBL_TRACE_DISTANCE / LBL_LIGHT_SPACING) 
 
     for(local i = numLightsToKeep; i < numLightsToKeep + numLightsPotential; i++) { // remove all lights from index numLightsToKeep onwards
-        local light = Entities.FindByName(null, bridgeIndex + "_light" + i)
+        local light = Entities.FindByName(null, bridgeIndex + "_lightbridgelights_light" + i)
         if(light != null) LBL_Dev.EntFireByHandleCompressed(light, "Kill")
     }
 }
