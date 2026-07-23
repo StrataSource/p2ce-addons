@@ -40,7 +40,7 @@ function UTV_Init() {
 
     UTV_player = GetPlayer()
 
-    local thinkDummy = Entities.CreateByClassname("info_target")   // dummy entity to run the think function
+    local thinkDummy = CreateEntityByName("info_target", {targetname = "unusedturretvo_thinkdummy"})   // dummy entity to run the think function
     thinkDummy.SetScriptThinkFunction("UTV_Turret_CheckForPlayerBehindBridge")
     
     thinkDummy.PrecacheSoundScript(UTV_TURRET_SOUNDSCRIPT_BLOCKED)    // precache needs to be ran off an entity
