@@ -13,9 +13,6 @@ function UTV_ScriptInit() {
 UTV_player <- null
 UTV_turretArr <- []
 
-UTV_turretVoBlocked <- true
-UTV_turretVoBlockedCooldownTimer <- null
-
 const UTV_TURRET_SOUNDSCRIPT_BLOCKED = "NPC_FloorTurret.TalkBlockedByBridge"    // custom - added inside unused_turret_vo.txt
 const UTV_TURRET_SOUNDSCRIPT_COOLDOWN_MIN = 7
 const UTV_TURRET_SOUNDSCRIPT_COOLDOWN_MAX = 10
@@ -31,6 +28,8 @@ UTV_TURRET_TRACE_COLLISION_GROUP <- COLLISION_GROUP_PLAYER
 
 // runs when entities are ready
 function UTV_Init() {
+    UTV_Dev.msg("Script initialised!")
+
     // store turret handles to prevent constant searching, one slight downfall of this is if turrets are spawned after ScriptInit, but this rarely happens in maps
     for(local turret = null; turret = Entities.FindByClassname(turret, "npc_portal_turret_floor");) {
         UTV_turretArr.append(turret)
@@ -41,24 +40,13 @@ function UTV_Init() {
 
     UTV_player = GetPlayer()
 
-    local loop = CreateEntityByName("logic_timer", {   // loop timer for turrets checking for the player
-        RefireTime = 0.2
-    })
-
-    loop.ConnectOutput("OnTimer", "UTV_Turret_CheckForPlayerBehindBridge")
-    UTV_Dev.EntFireByHandleCompressed(loop, "Enable")
-
-    UTV_turretVoBlockedCooldownTimer = CreateEntityByName("logic_timer", {  // timer to allow turret VO again after a delay
-        RefireTime = RandomInt(UTV_TURRET_SOUNDSCRIPT_COOLDOWN_MIN, UTV_TURRET_SOUNDSCRIPT_COOLDOWN_MAX)
-    })
-
-    UTV_turretVoBlockedCooldownTimer.ConnectOutput("OnTimer", "UTV_Turret_AllowBlockedVoiceLines")
-    UTV_turretVoBlockedCooldownTimer.PrecacheSoundScript(UTV_TURRET_SOUNDSCRIPT_BLOCKED)    // precache needs to be ran off an entity
+    local thinkDummy = Entities.CreateByClassname("info_target")   // dummy entity to run the think function
+    thinkDummy.SetScriptThinkFunction("UTV_Turret_CheckForPlayerBehindBridge")
+    
+    thinkDummy.PrecacheSoundScript(UTV_TURRET_SOUNDSCRIPT_BLOCKED)    // precache needs to be ran off an entity
 }
 
 function UTV_Turret_CheckForPlayerBehindBridge() {
-    if(!UTV_turretVoBlocked) return   // if delay is in progress
-
     local playerPos = UTV_player.GetCenter()
     local turretMaxTestDistanceSqr = UTV_TURRET_MAX_TEST_DISTANCE * UTV_TURRET_MAX_TEST_DISTANCE
 
@@ -120,10 +108,7 @@ function UTV_Turret_CheckForPlayerBehindBridge() {
                                 if(traceForPlayerBridge.GetEntity().GetClassname() == "projected_wall_entity" && RandomInt(1,UTV_TURRET_SOUNDSCRIPT_PLAYCHANCE) == 1) {   // 1 in TURRET_SOUNDSCRIPT_PLAYCHANCE chance of playing (when permitted)
                                     turret.EmitSound(UTV_TURRET_SOUNDSCRIPT_BLOCKED)
 
-                                    UTV_turretVoBlocked = false
-
-                                    UTV_turretVoBlockedCooldownTimer.__KeyValueFromInt("RefireTime", RandomInt(UTV_TURRET_SOUNDSCRIPT_COOLDOWN_MIN, UTV_TURRET_SOUNDSCRIPT_COOLDOWN_MAX))
-                                    UTV_Dev.EntFireByHandleCompressed(UTV_turretVoBlockedCooldownTimer, "Enable")   // enable delay
+                                    return RandomFloat(UTV_TURRET_SOUNDSCRIPT_COOLDOWN_MIN, UTV_TURRET_SOUNDSCRIPT_COOLDOWN_MAX)
                                 }
                             }
                         }
@@ -132,12 +117,6 @@ function UTV_Turret_CheckForPlayerBehindBridge() {
             }
         }
     }
-}
-
-// re-enable ability to play voice lines once delay is up
-function UTV_Turret_AllowBlockedVoiceLines() {
-    UTV_turretVoBlocked = true
-    UTV_Dev.EntFireByHandleCompressed(UTV_turretVoBlockedCooldownTimer, "Disable")
 }
 
 // run the script on spawn
