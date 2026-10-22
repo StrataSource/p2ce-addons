@@ -16,8 +16,8 @@ const LBL_LIGHT_BRIGHTNESS = 50
 const LBL_LIGHT_D50 = 50
 const LBL_LIGHT_D0 = 300
 const LBL_LIGHT_SHADOWSIZE = -1 // DONT CHANGE THIS FROM -1, it just instantly overwhelms the shadow atlas (-1 = no shadows)
-const LBL_LIGHT_VOLUMETRIC_LIGHTSCALE = 110
-const LBL_LIGHT_VOLUMETRIC_DENSITY = 0.025
+const LBL_LIGHT_VOLUMETRIC_LIGHTSCALE = 0
+const LBL_LIGHT_VOLUMETRIC_DENSITY = 0
 
 const LBL_LIGHT_SPACING = 24  // distance between lights in units, less spacing means more lights but a higher performance cost
 const LBL_LIGHT_MAXCOUNT = 128  // maximum number of lights per bridge to prevent performance issues
@@ -207,7 +207,7 @@ function LBL_lightCreate(pos) {    // returns light handle
     light.__KeyValueFromInt("max_health", LBL_LIGHT_SPECIFIC_HEALTH) // needed to detect light entities later
 
     // needs adding like this for whatever reason
-    LBL_Dev.EntFireByHandleCompressed(light, "AddOutput", "_volumetricmode 2")
+    LBL_Dev.EntFireByHandleCompressed(light, "AddOutput", "_volumetricmode 0")
     LBL_Dev.EntFireByHandleCompressed(light, "SetVolumetricLightScale", LBL_LIGHT_VOLUMETRIC_LIGHTSCALE.tostring())
     LBL_Dev.EntFireByHandleCompressed(light, "SetVolumetricDensity", LBL_LIGHT_VOLUMETRIC_DENSITY.tostring())
 
