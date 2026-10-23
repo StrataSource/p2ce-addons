@@ -1,0 +1,9 @@
+"LightmappedGeneric"
+{
+	"$translucent" 		"1"
+	"$basetexture" 		"Tools/toolsclip_rubbertire"
+	"%compileclip" 		"1"
+	"%compilenodraw"	"1"
+	"$surfaceprop" 		"rubbertire"
+	"%keywords" 		"clip,rubber"
+}

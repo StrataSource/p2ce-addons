@@ -1,0 +1,9 @@
+"LightmappedGeneric"
+{
+	"$translucent" 		"1"
+	"$basetexture" 		"Tools/toolsclip_metalgrate"
+	"%compileclip" 		"1"
+	"%compilenodraw"	"1"
+	"$surfaceprop" 		"metalgrate"
+	"%keywords" 		"clip,metalgrate"
+}
