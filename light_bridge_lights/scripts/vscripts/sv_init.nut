@@ -195,7 +195,7 @@ function LBL_lightCreate(pos) {    // returns light handle
         _specularmode = 0,
         _indirectmode = 0,
         _directmode = 2,
-        spawnflags = 2
+        spawnflags = 0
     })
     light.SetLightColor(LBL_LIGHT_COLOUR, LBL_LIGHT_BRIGHTNESS)
     light.SetLightFalloffD50D0(LBL_LIGHT_D50, LBL_LIGHT_D0)
