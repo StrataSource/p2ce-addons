@@ -1,0 +1,8 @@
+"LightmappedGeneric"
+{
+	"$translucent" 1
+	"$basetexture" "Tools/toolsfog"
+	"srgb?$basetexture" "Tools/toolsfog-dx10"
+	"%compilefog" 1
+	"%compilenodraw" 1
+}

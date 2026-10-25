@@ -1,0 +1,9 @@
+"LightmappedGeneric"
+{
+	"$translucent" 		"1"
+	"$basetexture" 		"Tools/toolsclip_sand"
+	"%compileclip" 		"1"
+	"%compilenodraw"	"1"
+	"$surfaceprop" 		"sand"
+	"%keywords" 		"clip,sand"
+}
